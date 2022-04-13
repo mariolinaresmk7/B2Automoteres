@@ -2,81 +2,131 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2 Automotores</title>
-    <link rel="shortcut icon" href="./multimedia/logob2.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/6bc99cb277.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./Css/estilos.css">
-    <link rel="preconectar" href="https://fonts.googleapis.com">
-    <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2 Automotores</title>
+  <link rel="shortcut icon" href="./multimedia/logob2.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/6bc99cb277.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Css/estilos.css">
+  <link rel="preconectar" href="https://fonts.googleapis.com">
+  <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-<body class="grid-cointeiner">
+<body class="container-fluid">
 
-    <header class="header">
-        <h1>B2 Automotores</h1>
-    </header>
-
-    <nav class="navbar">
-        <ul class="navbar__nav">
-            <li> <a href="#">VEHICULOS</a>
-                <ul class="navbar__subnav">
-                    <li><a href="./secciones/0km.html">OKM</a></li>
-                    <li><a href="./secciones/Usados.html">USADOS</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a href="./secciones/Servicios.html">SERVICIOS</a>
-        <a href="./secciones/Contacto.html">CONTACTOS</a>
+  <header class="row header">
+    <h1 class="col-lg-4 col-md-4 col-sm-12">B2 Automotores</h1>
+    <nav class="col-lg-8 col-md-8 col-sm-12 navbar">
+      <ul class="navbar__nav">
+        <li> <a href="#">VEHICULOS</a>
+          <ul class="navbar__subnav">
+            <li><a href="./secciones/0km.html">OKM</a></li>
+            <li><a href="./secciones/Usados.html">USADOS</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="./secciones/Servicios.html">SERVICIOS</a>
+      <a href="./secciones/Contacto.html">CONTACTOS</a>
     </nav>
+  </header>
 
-    <main class="menu">
-        <Section>
-            <article>
-                <h2>QUIENES SOMOS</h2>
-                <p>B2 Automoteres nace por la pasion por los autos, años de trayectoria en la
-                    comercializacion</p>
-                <p>nos avalan, nuestra mision es brindar soluciones integrales de movilidad a nuestros
-                    clientes.</p>
-                <p>Ponemos a disposicion nuestra gama de autos 0km como usados que son revisados minuciociamente,
-                    vehículos</p>
-                <p>en perfectas condiciones, los
-                    servicios post-ventas</p>
-                <p>y el asesoramiento comercial especializado para que cuente con facilidades
-                    muy
-                    convenientes según sus ingresos.</p>
-            </article>
-        </Section>
-    </main>
+  <div id="carouselExampleCaptions" class="col-lg-12 col-md-12 col-sm-12 carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item animate__animated animate__fadeIn active">
+        <img src="./multimedia/208-MastheadComponent-Desktop.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>SUBITE A TU 0KM</h5>
+          <p>Contamos con toda la linea Peugeot, Ford, Citroen</p>
+        </div>
+      </div>
+      <div class="carousel-item animate__animated animate__fadeIn">
+        <img src="./multimedia/peugeot-208-lightspeed.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>TAMBIEN TENEMOS UNIDADES USADAS</h5>
+          <p>Todos nuestro vehiculos usados estan certificados por nuestro taller</p>
+        </div>
+      </div>
+      <div class="carousel-item animate__animated animate__fadeIn">
+        <img src="./multimedia/cq5dam.resized.img.1680.large.time1627477249501.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>SERVICIOS</h5>
+          <p>Contamos con un staff capacitado para brindarte servicios post-venta</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-    <nav class="navimg">
-        <div class="navimg__item1">
-            <a href="./secciones/0km.html"">BUSCA TU 0KM</a>
+
+  <main class="row menu">
+    <img class="col-lg-6 col-md-6 col-sm-12 img" src="./multimedia/venta-de-auto.jpg" alt="">
+    <Section class="col-lg-6 col-md-6 col-sm-12">
+      <article>
+        <h2>QUIENES SOMOS</h2>
+        <p>B2 Automoteres nace por la pasion por los autos, años de trayectoria en la
+          comercializacion
+          nos avalan, nuestra mision es brindar soluciones integrales de movilidad a nuestros
+          clientes.
+          Ponemos a disposicion nuestra gama de autos 0km como usados que son revisados minuciociamente,
+          vehículos
+          en perfectas condiciones, los
+          servicios post-ventas
+          y el asesoramiento comercial especializado para que cuente con facilidades
+          muy
+          convenientes según sus ingresos.</p>
+      </article>
+    </Section>
+  </main>
+
+  <nav class="row navimg">
+    <div class="col-lg-4 col-md-12 navimg__item1">
+      <a href="./secciones/0km.html"">BUSCA TU 0KM</a>
         </div>
-        <div class=" navimg__item2">
-                <a href="./secciones/Servicios.html">CONTAMOS CON EL MEJOR POST-VENTA PARA QUE CUIDES TU AUTO</a>
-        </div>
-        <div class="navimg__item3">
-            <a href="./secciones/Contacto.html">NO TE QUEDE CON DUDA, CONSULTANOS LO QUE QUERE SABER</a>
-        </div>
-    </nav>
-    <footer class="pie">
-        <h2>SEGUINOS EN NUESTRAS REDES</h2>
-        <div class="pie__links">
-            <a href="http://www.facebook.com"><i class="fa-brands fa-facebook">Facebook</i></a>
-            <a href="http://www.instagram.com"><i class="fa-brands fa-instagram">Instagram</i></a>
-            <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp">WhatsApp</i></a>
-        </div>
-        <div class="pie__legal">
-            <h3>Legales</h3>
-            <p> Al navegar por este sitio web, usted acepta nuestra política de privacidad y nuestros
-                terminos y
-                condiciones.</p>
-        </div>
-    </footer>
+        <div class=" col-lg-4 col-md-12 navimg__item2">
+        <a href="./secciones/Servicios.html">CONTAMOS CON EL MEJOR POST-VENTA PARA QUE CUIDES TU AUTO</a>
+    </div>
+    <div class="col-lg-4 col-md-12 navimg__item3">
+      <a href="./secciones/Contacto.html">NO TE QUEDE CON DUDA, CONSULTANOS LO QUE QUERE SABER</a>
+    </div>
+  </nav>
+  <footer class="row pie">
+    <h2 class="col-lg-12 col-md-12 col-sm-8">SEGUINOS EN NUESTRAS REDES</h2>
+    <div class="col-lg-12 pie__links">
+
+      <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+      <a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+      <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 pie__legal">
+      <h3>Legales</h3>
+      <p> Al navegar por este sitio web, usted acepta nuestra política de privacidad y nuestros
+        terminos y
+        condiciones.</p>
+    </div>
+  </footer>
+
+  <script src="./js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

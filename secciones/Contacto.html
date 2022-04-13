@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2 Automotores</title>
-    <link rel="shortcut icon" href="../multimedia/logob2.png"
-    type="image/x-icon">
-<script src="https://kit.fontawesome.com/6bc99cb277.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../Css/estilos.css">
-<link rel="preconectar" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="../multimedia/logob2.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/6bc99cb277.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../Css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="preconectar" href="https://fonts.googleapis.com">
     <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
+    <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
 
 
 </head>
 
-<body class="grid-cnt4">
-    <header class="cabeza4">
-        <h1>CONTACTOS</h1>
-        <nav class="cabeza4__navbar">
+<body class="container-fluid fondo">
+    <header class="row cabeza4">
+        <h1 class="col-lg-2 col-md-4 col-sm-12">CONTACTOS</h1>
+        <nav class="col-lg-10 col-md-8 col-sm-12 cabeza4__navbar">
             <ul class="navbar4__nav" id="">
                 <li><a href="">VEHICULOS</a>
                     <ul>
@@ -33,49 +33,62 @@
             </ul>
         </nav>
     </header>
-           
-            <div class="divCont">
-            <p>Si queres saber mas sobre nuestras unidades usadas o 0km en venta, o servicios post venta o sobre
-                nuestros
-                planes
-                de financiacion no dudes en consultar.</p>
-            </div>
-        <form class="formulario" action="" method="">
-            <label for="Consulta">Seleccione su consulta</label>
-            <select class="form" name="Consulta" id="">
-                <option value="Usados">Usados</option>
-                <option value="0km">0km</option>
-                <option value="Servicios">Servicios</option>
-                <option value="Financicion">Financicion</option>
-            </select>
 
-            <label for="nombre">Nombre</label>
-            <input class="form" type="text" placeholder="Ingrese su nombre" name="nombre">
-            <label for="apellido">Apellido</label>
-            <input class="form" type="text" placeholder="Ingrese su apellido" name="apellido">
-            <label for="correo">Email</label>
-            <input class="form" type="email" placeholder="Ingrese su Email" name="correo" autocomplete="email">
-            <textarea class="area" name="" id="" cols="30" rows="10">Ingrese su consulta</textarea>
-            <div class="bton">
-                <input class="bton1" type="submit" value="Enviar consulta">
-                <input class="bton2" type="reset" value="Restablecer">
+    <div class="row divCont">
+        <p class="col-lg-4 col-md-10 col-sm-12">Si queres saber mas sobre nuestras unidades usadas o 0km en venta, o
+            servicios post venta o
+            sobre
+            nuestros
+            planes
+            de financiacion no dudes en consultar.</p>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-6 col-md-10 col-sm-8 formulario" action="" method="">
+            <label for="Consulta">Seleccione su consulta</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">Okm</option>
+                <option value="2">Usados</option>
+                <option value="3">Servicios</option>
+                <option value="3">Financicion</option>
+            </select>
+            <div class="input-group">
+                <span class="input-group-text">Nombre y Apellido</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+                    autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Ingrese su consulta</label>
+                <textarea class="area form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="row bton">
+                <input class="col-1 bton1" type="submit" value="Enviar consulta">
+                <input class="col-1 bton2" type="reset" value="Restablecer">
             </div>
         </form>
-
-        <footer class="pie__pie--contacto">
-            <h2>SEGUINOS EN NUESTRAS REDES</h2>
-            <div class="pie__links">
-                <a href="http://www.facebook.com"><i class="fa-brands fa-facebook">Facebook</i></a>
-                <a href="http://www.instagram.com"><i class="fa-brands fa-instagram">Instagram</i></a>
-                <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp">WhatsApp</i></a>
-            </div>
-            <div class="pie__legal">
-                <h3>Legales</h3>
-                <p> Al navegar por este sitio web, usted acepta nuestra política de privacidad y nuestros
-                    terminos y
-                    condiciones.</p>
-            </div>
-        </footer>
+    </div>
+    <footer class="row pie__pie--contactos">
+        <h2 class="col-lg-12 col-md-12 col-sm-12">SEGUINOS EN NUESTRAS REDES</h2>
+        <div class="col-lg-12 col-md-12 col-sm-12 pie__links">
+            <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 pie__legal">
+            <h3>Legales</h3>
+            <p> Al navegar por este sitio web, usted acepta nuestra política de privacidad y nuestros
+                terminos y
+                condiciones.</p>
+        </div>
+    </footer>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
