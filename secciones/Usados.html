@@ -14,12 +14,17 @@
     <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
     <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="container-fluid">
     <header class="row cabeza2">
         <h1 class="col-lg-2 col-md-2 col-sm-12">USADOS</h1>
         <nav class="col-lg-10 col-md-10 col-sm-12 cabeza2__navbar">
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="navbar__checkbtn">
+                <i class="navbar__icon"><img src="../multimedia/menu.png" alt=""></i>
+            </label>
             <ul>
                 <li><a href="../secciones/0km.html">OKM</a></li>
                 <li><a href="../secciones/Servicios.html">SERVICIOS</a></li>
@@ -32,11 +37,11 @@
     <main class="row menu2">
         <article class="col-lg-12 col-md-6 col-sm-12">
             <p>En B2 Automotores tambien contamos con unidades usadas que son revisadas al datalle antes de recibirlas,
-                para que usted compre su vehiculo usado en total confianza.</p>
+                para que usted pueda comprar su vehiculo usado en total confianza.</p>
         </article>
     </main>
     <div class="row tarjetas">
-        <div class="col-lg-2 col-md-4 col-sm-12 card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-right">
             <img src="../multimedia/peugeot-208-allure2014-frontal-lateral-piloto-cercana-1600213519331.jpg"
                 class="card-img-top" alt="...">
             <div class="card-body">
@@ -45,7 +50,7 @@
                 <a href="#" class="btn btn-primary">Mas Informacion</a>
             </div>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-12 card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-left">
             <img src="../multimedia/Vw-Fox-Highline-Impecable-Vendo-o-Permuto-20190519200027.jpg" class="card-img-top"
                 alt="...">
             <div class="card-body">
@@ -54,7 +59,7 @@
                 <a href="#" class="btn btn-primary">Mas Informacion</a>
             </div>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-12 card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-right">
             <img src="../multimedia/207p" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Peugeot</h5>
@@ -62,7 +67,7 @@
                 <a href="#" class="btn btn-primary">Mas Informacion</a>
             </div>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-12 card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-left">
             <img src="../multimedia/punto" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Fiat</h5>
@@ -70,11 +75,27 @@
                 <a href="#" class="btn btn-primary">Mas Informacion</a>
             </div>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-12 card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-down">
             <img src="../multimedia/cliomio" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Renault</h5>
                 <p class="card-text">Clio Mio mod19</p>
+                <a href="#" class="btn btn-primary">Mas Informacion</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-down">
+            <img src="../multimedia/mondeo" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ford</h5>
+                <p class="card-text">Mondeo Titanium, mod12</p>
+                <a href="#" class="btn btn-primary">Mas Informacion</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 card" data-aos="fade-down">
+            <img src="../multimedia/amarok" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Volkswagen</h5>
+                <p class="card-text">Amarok, mod19</p>
                 <a href="#" class="btn btn-primary">Mas Informacion</a>
             </div>
         </div>
@@ -95,6 +116,10 @@
         </div>
     </footer>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+      </script>
 </body>
 
 </html>

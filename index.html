@@ -19,22 +19,32 @@
 <body class="container-fluid">
 
   <header class="row header">
-    <h1 class="col-lg-4 col-md-4 col-sm-12">B2 Automotores</h1>
-    <nav class="col-lg-8 col-md-8 col-sm-12 navbar">
+    <nav class="col-lg-12 col-md-12 col-sm-12 navbar">
+      <h1 class="">B2 Automotores</h1>
+      <input type="checkbox" name="" id="toggler">
+      <label for="toggler" class="navbar__checkbtn">
+        <i class="navbar__icon"><img src="./multimedia/menu.png" alt=""></i>
+      </label>
       <ul class="navbar__nav">
         <li> <a href="#">VEHICULOS</a>
           <ul class="navbar__subnav">
-            <li><a href="./secciones/0km.html">OKM</a></li>
+            <li><a href="./secciones/0km.html">OKM</a>
+              <ul>
+                <li>Peugeot</li>
+                <li>Citroen</li>
+                <li>Ford</li>
+              </ul>
+            </li>
             <li><a href="./secciones/Usados.html">USADOS</a></li>
           </ul>
         </li>
+        <li><a href="./secciones/Servicios.html">SERVICIOS</a></li>
+        <li><a href="./secciones/Contacto.html">CONTACTOS</a></li>
       </ul>
-      <a href="./secciones/Servicios.html">SERVICIOS</a>
-      <a href="./secciones/Contacto.html">CONTACTOS</a>
     </nav>
   </header>
 
-  <div id="carouselExampleCaptions" class="col-lg-12 col-md-12 col-sm-12 carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleCaptions" class="col-lg-12 carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -52,14 +62,14 @@
         </div>
       </div>
       <div class="carousel-item animate__animated animate__fadeIn">
-        <img src="./multimedia/peugeot-208-lightspeed.jpg" class="d-block w-100" alt="...">
+        <img src="./multimedia/cc" class="d-block w-100" alt="..." style="object-fit: cover;">
         <div class="carousel-caption d-none d-md-block">
           <h5>TAMBIEN TENEMOS UNIDADES USADAS</h5>
           <p>Todos nuestro vehiculos usados estan certificados por nuestro taller</p>
         </div>
       </div>
       <div class="carousel-item animate__animated animate__fadeIn">
-        <img src="./multimedia/cq5dam.resized.img.1680.large.time1627477249501.jpg" class="d-block w-100" alt="...">
+        <img src="./multimedia/taller" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>SERVICIOS</h5>
           <p>Contamos con un staff capacitado para brindarte servicios post-venta</p>
@@ -82,13 +92,12 @@
     <Section class="col-lg-6 col-md-6 col-sm-12">
       <article>
         <h2>QUIENES SOMOS</h2>
-        <p>B2 Automoteres nace por la pasion por los autos, años de trayectoria en la
+        <p>B2 Automotores nace por la pasion de los autos, años de trayectoria en la
           comercializacion
           nos avalan, nuestra mision es brindar soluciones integrales de movilidad a nuestros
           clientes.
-          Ponemos a disposicion nuestra gama de autos 0km como usados que son revisados minuciociamente,
-          vehículos
-          en perfectas condiciones, los
+          Ponemos a disposicion nuestra gama de autos 0km como tambien usados que son revisados minuciociamente,
+          los
           servicios post-ventas
           y el asesoramiento comercial especializado para que cuente con facilidades
           muy
@@ -108,14 +117,13 @@
       <a href="./secciones/Contacto.html">NO TE QUEDE CON DUDA, CONSULTANOS LO QUE QUERE SABER</a>
     </div>
   </nav>
+
   <footer class="row pie">
     <h2 class="col-lg-12 col-md-12 col-sm-8">SEGUINOS EN NUESTRAS REDES</h2>
     <div class="col-lg-12 pie__links">
-
       <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
       <a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
       <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
-
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 pie__legal">
       <h3>Legales</h3>

@@ -27,6 +27,7 @@
 }
 .header {
   border-bottom: 2px solid #fff;
+  height: 60px;
 }
 .header h1 {
   font-weight: bold;
@@ -36,32 +37,60 @@
   animation-iteration-count: initial;
   animation-timing-function: linear;
 }
+
 .navbar {
-  margin-top: 45px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  position: relative;
-  font-weight: bold;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
 }
 .navbar a {
-  text-decoration: none;
   color: aliceblue;
-  padding-right: 80px;
+  font-weight: bold;
+  text-decoration: none;
 }
-.navbar__nav li {
+.navbar__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
   list-style: none;
-  transform: translateY(10px);
+  z-index: 3;
+  margin-top: 15px;
 }
-li .navbar__subnav {
+
+.navbar__nav li ul {
+  list-style: none;
+}
+.navbar__subnav {
   display: none;
   position: absolute;
+  background-color: #a5a5a5;
+  width: 65%;
+  left: -100%;
+  padding: 20px;
+  margin-left: 35%;
+  background-image: url(../multimedia/2081);
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: center;
+  animation-name: animacion;
+  animation-duration: 0.2s;
+}
+.navbar__subnav li {
+  width: 100px;
+}
+.navbar__subnav ul li {
+  display: none;
+  position: relative;
+  display: block;
+}
+.navbar__subnav ul li {
+  color: black;
 }
 .navbar__subnav li {
   display: block;
-}
-.navbar__subnav li a {
-  color: aliceblue;
 }
 .navbar a:hover {
   background-color: #a5a5a5;
@@ -69,7 +98,18 @@ li .navbar__subnav {
 }
 .navbar__nav li:hover .navbar__subnav {
   display: block;
+  left: 0%;
 }
+
+.navbar__icon img {
+  width: 30px;
+  height: 30px;
+}
+.navbar__icon,
+#toggler {
+  display: none;
+}
+
 .carousel {
   margin-top: 50px;
 }
@@ -253,6 +293,7 @@ li .navbar__subnav {
   padding-top: 35px;
   padding-bottom: 35px;
 }
+
 .pie__links :hover {
   color: rgb(11, 127, 199);
   font-size: 50px;
@@ -267,10 +308,10 @@ li .navbar__subnav {
 
 /*MEDIA QUERI*/
 @media (min-width: 768px) and (max-width: 992px) {
-  .navbar{
-    justify-content: space-evenly; 
-  } 
-  .navbar a{
+  .navbar {
+    justify-content: space-evenly;
+  }
+  .navbar a {
     padding-right: 0px;
   }
   .menu {
@@ -286,25 +327,43 @@ li .navbar__subnav {
     border-radius: 5%;
   }
 }
-@media(max-width: 768px) {
-  .navbar{
-    flex-direction: column;
-    justify-content: start; 
-    align-items: flex-start;
-  } 
-  .navbar__nav li{
-    transform: translateX(-30px)
+@media (max-width: 768px) {
+  .navbar__checkbtn {
+    display: block;
   }
-  .navbar__subnav li {
-    display:inline-block;
-  }
-  .navbar__nav li:hover .navbar__subnav {
-    display: inline-block;
-  }
-  .carousel{
-  display: none;  
+  .navbar__icon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 15px;
   }
 
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbar__nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background-color: #a5a5a5;
+    width: 100%;
+    max-height: 100vh;
+    right: 0;
+    transition: all 0.5s;
+  }
+  .navbar__nav li {
+    padding: 1rem;
+  }
+  #toggler:checked ~ .navbar__nav {
+    left: 0%;
+  }
+
+  .carousel {
+    display: none;
+  }
   .menu {
     height: auto;
     width: 100%;
@@ -318,12 +377,12 @@ li .navbar__subnav {
     justify-content: flex-end;
     transform: translateY(100px);
   }
-  .pie__links{
+  .pie__links {
     width: 60%;
   }
 }
 
-/*SECCION OKM*/ 
+/*SECCION OKM*/
 .cabeza1 {
   display: flex;
   justify-content: space-between;
@@ -355,16 +414,15 @@ li .navbar__subnav {
   display: flex;
   justify-content: end;
   padding: 5px;
-  
 }
 .navbar1 .navbar1__nav {
   display: flex;
   flex-direction: row;
-  gap: 80px;*/
+  gap: 80px;
 }
 .navbar1__nav li {
   list-style: none;
-  display: flex; 
+  display: flex;
 }
 .navbar1__nav li a {
   text-decoration: none;
@@ -421,6 +479,7 @@ li .navbar__subnav {
   height: 400px;
   display: flex;
   border: 2px solid black;
+  cursor: pointer;
 }
 .contenedor__slide {
   position: relative;
@@ -434,7 +493,7 @@ li .navbar__subnav {
   flex-grow: 5;
 }
 .contenedor__slide:nth-child(1) {
-  background-image: url(../multimedia/208-MastheadComponent-Desktop.png);
+  background-image: url(../multimedia/territory);
   background-size: cover;
   background-position: center;
 }
@@ -444,7 +503,7 @@ li .navbar__subnav {
   background-size: cover;
 }
 .contenedor__slide:nth-child(3) {
-  background-image: url(../multimedia/5008ADAS.jpg);
+  background-image: url(../multimedia/c4);
   background-size: cover;
   background-position: center;
 }
@@ -454,7 +513,7 @@ li .navbar__subnav {
   background-position: center;
 }
 .contenedor__slide:nth-child(5) {
-  background-image: url(../multimedia/partner.png);
+  background-image: url(../multimedia/ranger-raptor);
   background-size: cover;
   background-position: center;
 }
@@ -472,11 +531,34 @@ li .navbar__subnav {
   width: 70%;
 }
 
-
 /*MEDIA QUERI */
-@media (max-width: 768px){
-  .cabeza1{
+@media (max-width: 768px) {
+  .cabeza1 {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar1 {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .navbar1 .navbar1__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background-color: #a5a5a5;
+    width: 100%;
+    max-height: 100vh;
+    right: 0;
+    transition: all 0.5s;
+    gap: 10px;
+  }
+
+  #toggler:checked ~ .navbar1__nav {
+    left: 0%;
   }
   .navbar1 {
     justify-content: start;
@@ -487,7 +569,7 @@ li .navbar__subnav {
   }
   .menu1__marca__itemA {
     font-size: 20px;
-    margin-right:0%;
+    margin-right: 0%;
     margin-left: 0%;
     transform: skew(0deg);
   }
@@ -506,7 +588,7 @@ li .navbar__subnav {
   }
 }
 
-/*SECCION USADOS*/ 
+/*SECCION USADOS*/
 .cabeza2 {
   display: flex;
   flex-direction: row;
@@ -518,6 +600,7 @@ li .navbar__subnav {
   z-index: 2;
 }
 .cabeza2 h1 {
+  height: inherit;
   font-size: 30px;
   font-style: italic;
   border-right: 4px solid darkblue;
@@ -528,12 +611,15 @@ li .navbar__subnav {
   animation-timing-function: linear;
 }
 .cabeza2__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   font-weight: bolder;
 }
 .cabeza2__navbar ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: end;
   gap: 50px;
   padding-top: 5px;
 }
@@ -561,32 +647,34 @@ li .navbar__subnav {
   margin-bottom: 30px;
   font-size: large;
 }
-.tarjetas{
+.tarjetas {
   display: flex;
+  flex-wrap: row wrap;
   justify-content: center;
 }
-.card{
+.card {
   background-color: #a5a5a5;
   margin-right: 30px;
-
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
-.card-body{
+.card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.btn{
+.btn {
   background-color: rgba(0, 0, 0, 0.5);
-} 
+}
 
 .card img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  
 }
-
 
 .card a {
   color: aliceblue;
@@ -600,21 +688,54 @@ li .navbar__subnav {
 @media (max-width: 768px) {
   .cabeza2 {
     position: relative;
-    z-index: 0;
+    z-index: 2;
+  }
+  .cabeza2 h1 {
+    height: 50px;
+    display: flex;
+    align-items: center;
   }
   .cabeza2__navbar ul {
     flex-direction: column;
-    justify-content: flex-start;
     gap: 10px;
     padding-top: 5px;
-}
-  .menu2{
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background-color: #a5a5a5;
+    width: 100%;
+    max-height: 100vh;
+    right: 0;
+    transition: all 0.5s;
+  }
+  #toggler:checked ~ ul {
+    left: 0%;
+  }
+  .menu2 {
     margin-top: 150px;
+  }
+  .tarjetas {
+    flex-direction: column;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+    max-width: 60%;
+    margin-left: 100px;
+  }
+  .card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .menu2 article p{
+  .cabeza2 h1 {
+    height: inherit;
+  }
+
+  .menu2 article p {
     font-size: medium;
     justify-content: start;
     text-align: left;
@@ -630,8 +751,8 @@ li .navbar__subnav {
   display: flex;
   justify-content: space-between;
   background-color: #b3b3b3;
-  z-index: 1;
   height: 40px;
+  z-index: 4;
 }
 .cabeza3 h1 {
   font-style: italic;
@@ -647,49 +768,61 @@ li .navbar__subnav {
   animation-iteration-count: initial;
   animation-timing-function: linear;
 }
-.cabeza3__navbar ul li {
-  list-style: none;
-}
-.cabeza3__navbar ul {
-  display: flex;
-  justify-content: flex-end;
-  gap: 50px;
-}
 .cabeza3__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
   padding: 10px;
   font-weight: bold;
 }
-.cabeza3__navbar li a {
+.cabeza3__navbar__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.cabeza3__navbar__nav a {
   text-decoration: none;
-  color: aliceblue;
+  color: black;
 }
-.cabeza3__navbar li .cabeza3__navbar__nav {
+
+.cabeza3__navbar__nav li {
+  list-style: none;
+}
+
+.cabeza3__navbar .cabeza3__navbar__subnav {
   position: absolute;
-
   display: none;
-}
-
-.cabeza3__navbar li .cabeza3__navbar__nav li {
-  display: block;
+  z-index: 5;
   background-color: #b3b3b3;
-  height: 50px;
-  width: 100%;
+  width: 70%;
+  padding: 20px;
+  left: -100%;
+  margin-left: 35%;
+  background-image: url(../multimedia/2081);
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  background-position-y: center;
+  animation-name: animacion;
+  animation-duration: 0.2s;
+}
+.cabeza3__navbar__subnav ul li {
+  font-weight: normal;
 }
 
 .cabeza3__navbar ul li a:hover {
   color: brown;
 }
-.cabeza3__navbar ul li:hover .cabeza3__navbar__nav {
+.cabeza3__navbar li:hover .cabeza3__navbar__subnav {
   display: block;
-  width: 100%;
-  height: 800px;
+  left: 0%;
 }
+
 .menu3 {
   margin-top: 100px;
 }
 .menu3__taller1 {
-  
   display: flex;
   flex-direction: row;
   background-color: #fff;
@@ -721,7 +854,7 @@ li .navbar__subnav {
   width: 100%;
   height: 800px;
 }
-.menu3__taller2 .taller2{
+.menu3__taller2 .taller2 {
   height: 90%;
   width: 40%;
   margin-top: 40px;
@@ -738,16 +871,35 @@ li .navbar__subnav {
   font-size: 20px;
 }
 
-@media (min-width: 320px) and (max-width: 768px){
-  .cabeza3__navbar ul {
+@media /*(min-width: 320px) and */(max-width: 768px) {
+  .cabeza3__navbar__nav {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
+    position: fixed;
+    top: 40px;
+    left: -100%;
+    background-color: #a5a5a5;
+    width: 100%;
+    max-height: 100vh;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 6;
   }
-  .menu3{
-    margin-top: 150px;
+  .navbar__icon {
+    right: 20px;
+    top: 8px;
+    z-index: 6;
   }
-  .menu3__taller1{
+  .cabeza3__navbar__nav {
+    display: block;
+  }
+  #toggler:checked ~ ul {
+    left: 0%;
+  }
+
+  .menu3__taller1 {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -758,7 +910,7 @@ li .navbar__subnav {
     height: 450px;
     margin-left: 0px;
   }
-  .menu3__taller1 div p{
+  .menu3__taller1 div p {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -767,64 +919,68 @@ li .navbar__subnav {
     margin-left: 0%;
     color: black;
     font-size: 16px;
-    }
-    .menu3__taller2{
-      flex-direction: column-reverse;
-      height: 900px;
-    }
-    .menu3__taller2 p{
-      margin-left: 25%;
-      font-size: 16px;
-    }
-    .menu3__taller2 .taller2{
-      margin-bottom: 40px;
-      margin-top: 10px;
-      margin-left: 0px;
-      width: 100%;
-      height: 450px;
-    }
+  }
+  .menu3__taller2 {
+    flex-direction: column-reverse;
+    height: 900px;
+  }
+  .menu3__taller2 p {
+    margin-left: 25%;
+    font-size: 16px;
+  }
+  .menu3__taller2 .taller2 {
+    margin-bottom: 60px;
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 100%;
+    height: 450px;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 970px){
+@media (min-width: 768px) and (max-width: 970px) {
   #taller1s {
     margin-top: 60px;
     margin-left: 50px;
     width: 450px;
     height: 450px;
   }
-  .menu3__taller1{
+  .menu3__taller1 {
     height: 600px;
   }
-  .menu3__taller1 p{
+  .menu3__taller1 p {
     margin-left: 40px;
     font-size: 30px;
   }
-#taller2s{
- margin-top: 60px;
-  margin-right: 50px;
-  width: 450px;
-  height: 450px;
-}
-.menu3__taller2{
-  height: 600px;
-}
-.menu3__taller2 p{
-  margin-left: 10%;
-}
-.pie h2 {
-  text-align: left;
-  font-size: 20px;
-}
-}
-@media (min-width: 971px){
+  #taller2s {
+    margin-top: 60px;
+    margin-right: 50px;
+    width: 450px;
+    height: 450px;
+  }
+  .menu3__taller2 {
+    height: 600px;
+  }
+  .menu3__taller2 p {
+    margin-left: 10%;
+  }
+  .pie h2 {
+    text-align: left;
+    font-size: 20px;
+  }
 }
 
 /*CONTACTOS*/ /*CONTACTOS*/
 .fondo {
   background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
 }
+.divCont{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .cabeza4 {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   background-color: #434343b6;
   z-index: 2;
@@ -843,38 +999,64 @@ li .navbar__subnav {
   animation-iteration-count: initial;
   animation-timing-function: linear;
 }
-.cabeza4__navbar {
-  padding: 10px;
-}
-.cabeza4__navbar ul {
+.cabeza4__navbar,a {
   display: flex;
-  justify-content: flex-end;
-  gap: 50px;
-}
-
-.navbar4__nav li a {
-  text-decoration: none;
-  display: block;
-  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
   color: aliceblue;
+  text-decoration: none;
 }
-.navbar4__nav li {
+.cabeza4__navbar li {
   list-style: none;
 }
-.navbar4__nav li ul {
+.navbar4__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+}
+.navbar4__nav #nav1 {
   display: none;
   position: absolute;
+  background-color: #fff;
+  width: 65%;
+  left: -100%;
+  padding: 20px;
+  margin-left: 35%;
+  background-image: url(../multimedia/2081);
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: center;
+  animation-name: animacion;
+  animation-duration: 0.2s;
+  color: black;
 }
-.navbar4__nav li ul li {
-  display: block;
-  background-color: #434343b6;
+.navbar4__nav #nav1 a {
+  color: black;
+  font-weight: bold;
+}
+
+.navbar4__nav #nav2 {
+  display: none;
+  position: absolute;
+  margin-left: 20px;
 }
 
 .cabeza4__navbar li a:hover {
   color: brown;
 }
-.cabeza4__navbar li:hover ul {
+.cabeza4__navbar #nav1 a:hover {
+  color: brown;
+}
+.cabeza4__navbar li:hover #nav1 {
   display: block;
+  left: 0%;
+}
+.cabeza4__navbar li:hover #nav2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .divCont {
@@ -951,16 +1133,38 @@ li .navbar__subnav {
   text-decoration: underline;
 }
 
-@media(max-width: 768px){
-  .fondo{
+@media (max-width: 768px) {
+  .fondo {
     background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
     background-size: cover;
     background-position: center;
   }
-  .cabeza4 h1{
-    font-size:20px;
+  .cabeza4 h1 {
+    font-size: 20px;
   }
-  .divCont{
+  .navbar4__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 5px;
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    background-color: #fff;
+    width: 100%;
+    max-height: 100vh;
+    right: 0;
+    transition: all 0.5s;
+  }
+  .navbar__icon {
+    right: 20px;
+    top: 8px;
+  }
+  .navbar4__nav a {
+    color: black;
+  }
+  .divCont {
     font-size: 15px;
     margin-top: 100px;
   }
@@ -975,7 +1179,7 @@ li .navbar__subnav {
     margin-top: 15px;
     width: 90%;
   }
-  .bton{
+  .bton {
     flex-direction: column;
   }
   .pie__legal {
@@ -983,12 +1187,11 @@ li .navbar__subnav {
     display: flex;
     align-items: flex-start;
   }
-  .pie__links{
+  .pie__links {
     flex-direction: column;
     align-items: flex-start;
     transform: translateX(50px);
     font-size: 20px;
-    
   }
   .pie__pie--contactos h2 {
     text-align: left;
@@ -1001,15 +1204,15 @@ li .navbar__subnav {
 }
 
 @media (min-width: 768px) and (max-width: 970px) {
-  .fondo{
+  .fondo {
     background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
     background-size: cover;
     background-position: center;
   }
-  .cabeza4__navbar ul{
+  .cabeza4__navbar ul {
     justify-content: flex-start;
   }
-  .divCont{
+  .divCont {
     display: flex;
     justify-content: center;
   }
@@ -1031,5 +1234,5 @@ li .navbar__subnav {
   .mb-3 {
     margin-top: 15px;
     width: 80%;
-}
+  }
 }
