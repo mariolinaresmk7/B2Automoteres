@@ -55,17 +55,23 @@
   .navbar__nav {
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: fixed;
-    gap: 1px;
+    gap: 0px;
     top: 70px;
     left: -100%;
     background-color: #a5a5a5;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     width: 100%;
     max-height: 100vh;
     right: 0;
     transition: all 0.5s;
     li {
-      padding: 1rem;
+      padding: 0.5rem;
+    }
+    a{
+      font-weight: normal;
     }
   }
 
@@ -130,7 +136,7 @@
     transform: translateY(75px);
   }
 }
-
+/*MEDIA QUERIES CONTACTOS*/
 @media (max-width: 768px) {
   .cabeza1 {
     position: relative;
@@ -138,38 +144,33 @@
     justify-content: space-between;
     border-bottom: none;
   }
-  .logo--okm {
-    margin-top: 100px;
-  }
+
   .navbar1 {
     flex-direction: column;
-    justify-content: center;
-  }
-  .navbar1 .navbar1__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    background-color: #a5a5a5;
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-    gap: 10px;
+    justify-content: start;
+    .navbar1__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      background-color: #a5a5a5;
+      width: 100%;
+      max-height: 100vh;
+      right: 0;
+      transition: all 0.5s;
+      padding: 5px;
+      gap: 5px;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    } 
   }
 
   #toggler:checked ~ .navbar1__nav {
     left: 0%;
   }
-  .navbar1 {
-    justify-content: start;
-  }
-  .navbar1 .navbar1__nav {
-    flex-direction: column;
-    gap: 5px;
-  }
+
   .menu1__marca__itemA {
     font-size: 20px;
     margin-right: 0%;

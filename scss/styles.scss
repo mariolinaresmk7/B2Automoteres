@@ -40,7 +40,7 @@
   justify-content: flex-end;
   align-items: center;
   a {
-    color: aliceblue;
+    color: $colorFuenteDeLink;
     font-weight: bold;
     text-decoration: none;
     &:hover {
@@ -180,7 +180,7 @@
   }
   a {
     font-size: 20px;
-    color: aliceblue;
+    color: $colorFuenteDeLink;
     text-decoration: none;
     border: 1px solid #fff;
     display: flex;
@@ -210,7 +210,7 @@
     height: 600px;
   }
   a {
-    color: aliceblue;
+    color: $colorFuenteDeLink;
     text-decoration: none;
     text-align: center;
     display: flex;
@@ -269,9 +269,6 @@
   height: 50px;
   border-bottom: 1px solid white;
 }
-/*.logo--okm {
-  margin-top: 10px;
-}*/
 .navbar1 {
   display: flex;
   justify-content: space-between;
@@ -285,7 +282,7 @@
       display: flex;
       a {
         text-decoration: none;
-        color: aliceblue;
+        color:$colorFuenteDeLink;
         &:hover{
           color: brown;
         }
@@ -297,7 +294,7 @@
   padding-top: 70px;
   p a {
     text-decoration: none;
-    color: aliceblue;
+    color: $colorFuenteDeLink;
 }
 }
 
