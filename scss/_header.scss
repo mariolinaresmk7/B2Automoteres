@@ -1,0 +1,22 @@
+@import "variables";
+
+.header {
+    background-color:map-get($estilos,color);
+    border-bottom: 1px solid #fff;
+    @include flexx (flex, row, space-between);
+    align-items: center;
+    position: sticky;
+    top: 0%;
+    z-index: 9;
+    height: 65px;
+    div {
+      @include flex;
+      align-items: center;
+      h3 {
+        padding-left: 15px;
+        color: map-get($estilos,colorF);
+        font-family:'Roboto', sans-serif;
+      }
+    }
+  }
+  

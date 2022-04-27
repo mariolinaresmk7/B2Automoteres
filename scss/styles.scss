@@ -1,12 +1,11 @@
-@import "variables"; 
+@import "variables";
+@import "header";
 @import "logo";
 @import "footer";
 
-
-
 .container-fluid {
   margin: 0%;
-  background-image: $colorFondo ;
+  background-image: $colorFondo;
 }
 
 @keyframes animacion {
@@ -26,44 +25,35 @@
     opacity: 100%;
   }
 }
-/* HEADER*/
-.header {
-  height: 50px;
-  border-bottom: 1px solid #fff;
-}
-
 
 .navbar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  @include flex;
   a {
     color: $colorFuenteDeLink;
-    font-weight: bold;
     text-decoration: none;
     &:hover {
-      background-color: #a5a5a5;
       border-bottom: 2px solid rgb(11, 127, 199);
     }
   }
 }
 .navbar__nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 35px;
+  @include flex;
+  padding-right: 30px;
+  padding-top: 10px;
+  gap: map-get($estilos, gap);
   list-style: none;
   z-index: 3;
-  margin-top: 10px;
   li ul {
     list-style: none;
   }
+  li {
+    &:hover .navbar__subnav {
+      display: block;
+      left: 0%;
+    }
+  }
 }
-.navbar__nav li:hover .navbar__subnav {
-  display: block;
-  left: 0%;
-}
+
 .navbar__subnav {
   display: none;
   position: absolute;
@@ -92,8 +82,7 @@
 }
 .navbar__icon {
   img {
-    width: 30px;
-    height: 30px;
+    @include size(30px, 30px);
     display: none;
   }
 }
@@ -102,17 +91,15 @@
 }
 /*CORRUSEL*/
 .carousel {
-  margin-top: 80px;
+  margin-top: 10px;
 }
 .carousel-item {
-  width: 100%;
-  height: 800px;
+  @include size(100%, 800px);
   background-color: rgb(0, 0, 0);
   background-blend-mode: soft-light;
   img {
     object-fit: cover;
-    width: 50%;
-    height: 100%;
+    @include size(50%, 100%);
     opacity: 30%;
   }
 }
@@ -127,67 +114,57 @@
 }
 /*MENU*/
 .menu {
-  margin: 0%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+  @include flexx(flex, row, space-evenly);
+
   align-items: center;
-  font-size: 17px;
-  line-height: 25px;
-  font-style: oblique;
-  background-color: #b3b3b3;
   color: black;
-  font-weight: bold;
   margin-top: 15px;
   height: 850px;
-  width: 100%;
-  article {
-    display: flex;
-    flex-direction: column;
+  p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+  }
+  section {
+    @include flexx(flex, column, center);
     width: 500px;
   }
   .img {
-    width: 35%;
-    height: 75%;
     border-radius: 5%;
+    @include size(40%, 60%);
+    box-shadow: -10px 10px 20px 0px black;
   }
   h2 {
     text-align: center;
     padding-bottom: 15px;
-    font-style: italic;
+    font-weight: bold;
   }
 }
-/*NAVIMG*/
 
 .navimg {
   margin-top: 80px;
-  display: flex;
-  justify-content: space-around;
+  @include flexx(flex, row, space-around);
 }
-
 .navimg__item1 {
-  display: flex;
-  width: 500px;
-  height: 500px;
+  @include size(500px, 500px);
+  @include flexx(flex, row, center);
   background-image: url(../multimedia/208-MastheadComponent-Desktop.png);
-  background-size: cover;
+  background-size: 180%;
   background-position: center;
   align-items: flex-end;
-  justify-content: center;
-  transition: height 1s;
+  transition: all 1s;
   &:hover {
-    height: 600px;
+    background-size: 200%;
+    background-position: center;
   }
   a {
     font-size: 20px;
     color: $colorFuenteDeLink;
     text-decoration: none;
     border: 1px solid #fff;
-    display: flex;
-    justify-content: center;
+    @include flexx(flex, row, center);
     align-items: center;
-    width: 200px;
-    height: 50px;
+    @include size(200px, 50px);
     transform: translateY(-50px);
     transition: 1s all;
     &:hover {
@@ -197,27 +174,24 @@
   }
 }
 .navimg__item2 {
-  display: flex;
-  width: 500px;
-  height: 500px;
+  @include flexx(flex, row, center);
+  @include size(500px, 500px);
   background-image: url(../multimedia/AP_2018_ATELIER-VIDANGE_WORKSHOP-DRAIN_002_1214x1020.jpg);
-  background-size: cover;
+  background-size: 120%;
   background-position: center;
   align-items: flex-end;
-  justify-content: center;
-  transition: height 1s;
+  transition: all 1s;
   &:hover {
-    height: 600px;
+    background-size: 140%;
+    background-position: center;
   }
   a {
     color: $colorFuenteDeLink;
     text-decoration: none;
     text-align: center;
-    display: flex;
-    justify-content: center;
+    @include flexx(flex, row, center);
     align-items: center;
-    width: 350px;
-    height: 50px;
+    @include size(350px, 50px);
     border: 1px solid #fff;
     transform: translateY(-50px);
     transition: 1s all;
@@ -227,29 +201,25 @@
     }
   }
 }
-
 .navimg__item3 {
-  display: flex;
-  width: 500px;
-  height: 500px;
+  @include flexx(flex, row, center);
+  @include size(500px, 500px);
   background-image: url(../multimedia/fases-de-una-consultoría-integral.jpg);
-  background-size: cover;
+  background-size: 180%;
   background-position: center;
   align-items: flex-end;
-  justify-content: center;
-  transition: height 1s;
+  transition: all 1s;
   &:hover {
-    height: 600px;
+    background-size: 200%;
+    background-position: center;
   }
   a {
     color: black;
     text-decoration: none;
     text-align: center;
-    display: flex;
-    justify-content: center;
+    @include flexx(flex, row, center);
     align-items: center;
-    width: 350px;
-    height: 50px;
+    @include size(350px, 50px);
     border: 1px solid black;
     transform: translateY(-50px);
     transition: 1s all;
@@ -260,31 +230,23 @@
   }
 }
 /*SECCION OKM*/
-.cabeza1 {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 0%;
-  z-index: 2;
-  height: 50px;
-  border-bottom: 1px solid white;
-}
+
 .navbar1 {
-  display: flex;
-  justify-content: space-between;
+  @include flexx(flex, row, space-between);
+  align-items: center;
   .navbar1__nav {
-    display: flex;
-    flex-direction: row;
-    padding-top: 12px;
-    gap: 50px;
+    @include flex;
+    padding-top: 15px;
+    padding-right: 30px;
+    gap: map-get($estilos, gap);
     li {
       list-style: none;
       display: flex;
       a {
         text-decoration: none;
-        color:$colorFuenteDeLink;
-        &:hover{
-          color: brown;
+        color: $colorFuenteDeLink;
+        &:hover {
+          border-bottom: 2px solid rgb(11, 127, 199);
         }
       }
     }
@@ -295,14 +257,14 @@
   p a {
     text-decoration: none;
     color: $colorFuenteDeLink;
-}
+  }
 }
 
 .menu1__marca__itemA {
   margin-top: 50px;
   background-color: darkblue;
   display: flex;
-  color: aliceblue;
+  color: map-get($estilos, colorF);
   font-size: 30px;
   margin-right: 70%;
   margin-left: 15px;
@@ -313,7 +275,7 @@
   background-color: darkblue;
   display: flex;
   justify-content: start;
-  color: aliceblue;
+  color: map-get($estilos, colorF);
   font-size: 30px;
   margin-left: 27.5%;
   margin-right: 25px;
@@ -324,20 +286,20 @@
   background-color: darkblue;
   display: flex;
   justify-content: start;
-  color: aliceblue;
+  color: map-get($estilos, colorF);
   font-size: 30px;
   margin-left: 26%;
   margin-right: 45px;
   transform: skew(-35deg);
 }
 .contenedor {
-  margin-top: 100px;
+  margin-top: 80px;
   position: absolute;
-  width: 100%;
-  height: 400px;
-  display: flex;
+  @include size(100%, 400px);
+  @include flex;
   border: 2px solid black;
   cursor: pointer;
+  height: 500px;
 }
 .contenedor__slide {
   position: relative;
@@ -375,7 +337,7 @@
   }
 }
 .tabla {
-  margin-top: 600px;
+  margin-top: 650px;
   h2 {
     margin-left: 15%;
     width: 80%;
@@ -387,9 +349,334 @@
   margin-left: 15%;
   width: 70%;
 }
+/*SECCION USADOS*/
+
+.cabeza2__navbar {
+  @include flexx(flex, row, space-between);
+  align-items: center;
+  ul {
+    @include flex;
+    padding-right: 30px;
+    padding-top: 10px;
+    gap: map-get($estilos, gap);
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: map-get($estilos, colorF);
+        &:hover {
+          border-bottom: 1px solid cyan;
+        }
+      }
+    }
+  }
+}
+
+.menu2 {
+  margin-top: 50px;
+  @include flexbox(flex, column);
+  h3 {
+    @include flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  p {
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: large;
+  }
+}
+
+.tarjetas {
+  @include flexx(flex, row, center);
+  flex-wrap: row wrap;
+  .card {
+    background-color: #a5a5a5;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    img {
+      @include size(100%, 400px);
+      object-fit: cover;
+    }
+    .card-body {
+      @include flexx(flex, column, center);
+      align-items: center;
+      .btn {
+        background-color: rgba(0, 0, 0, 0.5);
+        &:hover {
+          background-color: deepskyblue;
+        }
+      }
+    }
+    a {
+      color: $colorFuenteDeLink;
+      border: 1px solid aliceblue;
+      text-decoration: none;
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/*SERVICIOS*/
+.cabeza3__navbar {
+  @include flex;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 10px;
+  padding-right: 30px;
+  .cabeza3__navbar__nav {
+    @include flex;
+    gap: map-get($estilos,gap);
+    li {
+      list-style: none;
+      &:hover .cabeza3__navbar__subnav {
+        display: block;
+        left: 0%;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $colorFuenteDeLink;
+      &:hover {
+        border-bottom: 2px solid rgb(11, 127, 199);
+      }
+    }
+    .cabeza3__navbar__subnav {
+      position: absolute;
+      display: none;
+      z-index: 5;
+      background-color: #b3b3b3;
+      width: 70%;
+      padding: 20px;
+      left: -100%;
+      margin-left: 35%;
+      background-image: url(../multimedia/2081);
+      background-size: 25%;
+      background-repeat: no-repeat;
+      background-position-x: 80%;
+      background-position-y: center;
+      animation-name: animacion;
+      animation-duration: 0.2s;
+    }
+  }
+}
+
+.menu3 {
+  margin-top: 100px;
+  .menu3__taller1 {
+    @include flexx(flex, row, space-between);
+    background-color: #fff;
+    height: 800px;
+    .taller1 {
+      display: flex;
+      align-self: center;
+      @include size(40%, 90%);
+      margin-left: 50px;
+    }
+    p {
+      @include flex;
+      align-self: center;
+      color: black;
+      font-size: 50px;
+      padding-right: 400px;
+    }
+  }
+  .menu3__taller2 {
+    @include flexx(flex, row-reverse, space-between);
+    background-color: #a5a5a5;
+    height: 800px;
+    .taller2 {
+      display: flex;
+      align-self: center;
+      height: 90%;
+      width: 40%;
+      margin-right: 50px;
+    }
+    p {
+      @include flex;
+      align-items: center;
+      padding: 200px;
+      height: inherit;
+      text-align: center;
+      color: black;
+      font-size: 20px;
+    }
+  }
+}
+/*CONTACTOS*/ /*CONTACTOS*/
+*{margin: 0%;
+padding: 0%}
+.cabeza4__navbar {
+  @include flexx(flex, row, space-between);
+  padding-top: 10px;
+  padding-right: 30px;
+  a {
+    color: $colorFuenteDeLink;
+    text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid rgb(11, 127, 199);
+    }
+  }
+  li {
+    list-style: none;
+    &:hover #nav1 {
+      display: block;
+      left: 0%;
+    }
+    &:hover #nav2 {
+      @include flexbox(flex, column);
+      position: relative;
+    }
+  }
+  .navbar4__nav {
+    @include flex;
+    gap: map-get($estilos, gap);
+    #nav1 {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      width: 65%;
+      left: -100%;
+      padding: 20px;
+      margin-left: 35%;
+      background-image: url(../multimedia/2081);
+      background-size: 25%;
+      background-repeat: no-repeat;
+      background-position-x: 90%;
+      background-position-y: center;
+      animation-name: animacion;
+      animation-duration: 0.2s;
+      a {
+        color: black;
+        font-weight: bold;
+      }
+    }
+    #nav2 {
+      display: none;
+      position: absolute;
+      margin-left: 20px;
+    }
+  }
+}
+.contacto {
+  @include flexx(flex,row,center);
+  background-image: url(../multimedia/atencion);
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  color: map-get($estilos,colorF );
+  .divCont{
+    margin-top: 80px;
+    @include flexbox(flex,column);
+    h3{
+      @include flexx (flex,row,center);
+    }
+    p{
+      @include flexx(flex,row,center);
+    }
+  }
+  .consultas{
+    padding-top: 20px;
+    background-color: map-get($estilos,color);
+   /* @include flexx(flex, column, center);*/
+    @include size(600px, 150px);
+    border-start-start-radius: 20%;
+    border-end-end-radius: 20%;
+
+    p{
+      @include flexx(flex,row,center);
+    }
+    div{
+      /*@include flexx(flex,column,center);*/
+      
+      a{
+        @include flexx(flex,row,center);
+        color:$colorFuenteDeLink;
+        text-decoration: none;
+        background-color:green;
+     
+      }
+    }
+  }
+
+ 
+  /*.consultas{
+    
+   
+    border-start-start-radius: 20%;
+    border-end-end-radius: 20%;
+    @include size(600px,100px);
+    background-color: map-get($estilos,color);
+  p{
+    @include flexx(flex,row,center);
+  } 
+  div{
+    a{
+    text-decoration: none;
+    color:$colorFuenteDeLink;
+    }
+    @include flexx(flex,row,center);
+    background-color:green;
+    width: 100px;
+    margin-left: 40%;
+    border-radius: 50px;
+  } 
+  
+}*/
+}
+/*FORM*/
+.formCont {
+  @include flexx(flex, row, center);
+  .formulario {
+    @include flexbox(flex, column);
+    align-items: center;
+    margin-top: 100px;
+    color: black;
+    background-color: #bdb9b996;
+    box-shadow: -10px 0px 10px 0px black, 10px 0px 10px 0px black;
+    border-radius: 3%;
+    .form-select {
+      margin-top: 15px;
+    }
+    .input-group {
+      margin-top: 15px;
+    }
+    .mb-3 {
+      margin-top: 15px;
+      width: 100%;
+    }
+    .area {
+      height: 100px;
+      transition: 1s;
+      &:focus {
+        height: 300px;
+      }
+    }
+    .bton {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      .bton1 {
+        width: 200px;
+        height: 40px;
+        padding: 5px 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: solid 3px darkblue;
+        &:focus {
+          background-color: #789ec1;
+        }
+      }
+      .bton2 {
+        @extend .bton1;
+      }
+    }
+  }
+}
+
 
 @import "mediaqueries";
-
-
-
-

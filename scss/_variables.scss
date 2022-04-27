@@ -1,4 +1,33 @@
-$colorFondo: linear-gradient(#a5a5a5, #fff); 
-$colorFooter: black;
+$colorFondo: linear-gradient(#d1cfcf, #fff); 
+$colorFooter:rgb(44, 44, 44);
 $colorFooterB: #b3b3b3;
 $colorFuenteDeLink: aliceblue;
+
+@mixin flexbox($flex,$direction,) {
+    display: $flex;
+    flex-direction: $direction;
+    
+}
+@mixin flex {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flexx ($flex,$direction,$justify){
+    display: $flex;
+    flex-direction:$direction;
+    justify-content: $justify;
+}
+@mixin size ($width, $height){
+    width: $width;
+    height: $height;
+}
+    
+$estilos: (
+    color:rgb(44, 44, 44),
+    colorF:aliceblue,
+    centro: center,
+    gap:50px,
+    
+
+)
+
