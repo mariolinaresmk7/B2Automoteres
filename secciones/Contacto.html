@@ -24,16 +24,17 @@
 
 </head>
 
-<body class="container-fluid fondo">
+<body class="container-fluid">
+
     <header class="row header">
-        <div class="col-lg-2 col-md-4 col-sm-4">
-            <a href="../index.html"><img class="logo" src="../multimedia/logo3" alt=""></a>
-            <h3>B2 Automotores</h3>
+        <div class="col-lg-2 col-md-4 col-sm-10">
+            <a href="../index.html"><img class="logo2" src="../multimedia/logitob10.png" alt="logo 1"> </a>
+            <a href="../index.html"><img class="logo" src="../multimedia/logitob8.png" alt="logo 2"></a>
         </div>
-        <nav class="col-lg-10 col-md-8 col-sm-8 cabeza4__navbar">
+        <nav class="col-lg-10 col-md-8 col-sm-2 cabeza4__navbar">
             <input type="checkbox" name="" id="toggler">
             <label for="toggler" class="navbar__checkbtn">
-                <i class="navbar__icon navbar__icon--contactos"><img src="../multimedia/menu.png" alt=""></i>
+                <i class="navbar__icon navbar__icon--contactos"><img src="../multimedia/menu.png" alt="menu hamburguesa"></i>
             </label>
             <ul class="navbar4__nav">
                 <li><a href="#">VEHICULOS</a>
@@ -53,8 +54,9 @@
             </ul>
         </nav>
     </header>
+
     <menu class="row contacto">
-        <div class="col-lg-12 col-md-12 col-sm-12 divCont">
+        <div class="col-lg-4 col-md-12 col-sm-12 divCont">
             <h3>Contacto</h3>
             <p>Si queres saber mas sobre nuestras unidades usadas o 0km en venta, o
                 servicios post venta o
@@ -63,16 +65,25 @@
                 planes
                 de financiacion no dudes en consultar.</p>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 consultas">
-            <p>Para consultas inmediatas contactate con nuestro equipo de ventas a travez de</p>
-            <div class="col-lg-12 bton3">
-                <a href="http://www.whatsapp.com">Whatsapp</a>
+        <div class="col-lg-4">
+            <div class="row consultas">
+                <p class="col-lg-12">Para consultas inmediatas contactate con nuestro equipo de ventas a travez de
+                </p>
+                <div class="col-lg-12">
+                    <a class="bton3--whatsapp" href="http://www.whatsapp.com">Whatsapp</a>
+                </div>
             </div>
         </div>
     </menu>
 
     <div class="row formCont">
-        <form class="col-lg-4 col-md-10 col-sm-8 formulario" action="" method="">
+        <div class="col-lg-4 col-md-10 col-sm-12 ">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.5528146038214!2d-58.23433553422447!3d-32.48465075598159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95afdb00e066f60b%3A0xcd82688c7ecbe538!2sPlaza%20Gral.%20RAMIREZ%2C%20Concepci%C3%B3n%20del%20Uruguay%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1651192424972!5m2!1ses-419!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <form class="col-lg-4 col-md-10 col-sm-12 formulario" action="" method="">
             <label for="Consulta">Complete el formulario</label>
             <select class="form-select" aria-label="Default select example">
                 <option selected>seleccione su consulta</option>
@@ -101,12 +112,15 @@
             </div>
         </form>
     </div>
+
     <footer class="row pie pie--contactos">
-        <div class="col-lg-12 col-md-12 col-sm-12 pie__links pie__links--contactos">
+        <div class="col-lg-12 col-md-12 col-sm-12 pie__links">
             <h4>SEGUINOS EN NUESTRAS REDES</h4>
-            <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
-            <a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-            <a href="http://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+            <div>
+                <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="http://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 pie__legal">
             <h5>Legales</h5>
@@ -115,7 +129,9 @@
                 condiciones.</p>
         </div>
     </footer>
+    
     <script src="../js/bootstrap.min.js"></script>
+
 </body>
 
 

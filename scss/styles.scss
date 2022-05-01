@@ -28,6 +28,8 @@
 
 .navbar {
   @include flex;
+  justify-content: space-between;
+  align-items: center;
   a {
     color: $colorFuenteDeLink;
     text-decoration: none;
@@ -229,6 +231,47 @@
     }
   }
 }
+.razones {
+  background: linear-gradient(45deg, #3374db 70%, #fff 30%);
+  margin-top: 120px;
+  @include flexx(flex, column, space-around);
+  height: 500px;
+ 
+  div {
+    h2 {
+      @include flexx(flex, row, center);
+      color: map-get($estilos, colorF);
+      text-decoration: underline;
+    }
+  }
+  .razones1 {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-evenly;
+    .razones__card {
+      background-color: map-get($estilos, color);
+      @include flexx(flex, column, space-evenly);
+      height: 350px;
+      img {
+        background-blend-mode: soft-light;
+        max-width: 100%;
+        height: 220px;
+        object-fit: cover;
+        opacity: 50%;
+      }
+      .razones__cuerpo {
+        color: map-get($estilos, colorF);
+        h4 {
+          @include flexx(flex, row, center);
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
 /*SECCION OKM*/
 
 .navbar1 {
@@ -338,17 +381,17 @@
 }
 .tabla {
   margin-top: 650px;
+  @include flexbox(flex, column);
+  align-items: center;
   h2 {
-    margin-left: 15%;
-    width: 80%;
     text-decoration: underline;
   }
+  table {
+    margin-top: 50px;
+    width: 70%;
+  }
 }
-.table {
-  margin-top: 50px;
-  margin-left: 15%;
-  width: 70%;
-}
+
 /*SECCION USADOS*/
 
 .cabeza2__navbar {
@@ -365,7 +408,7 @@
         text-decoration: none;
         color: map-get($estilos, colorF);
         &:hover {
-          border-bottom: 1px solid cyan;
+          border-bottom: 2px solid rgb(11, 127, 199);
         }
       }
     }
@@ -387,18 +430,18 @@
     font-size: large;
   }
 }
-
 .tarjetas {
   @include flexx(flex, row, center);
-  flex-wrap: row wrap;
+
   .card {
+    max-width: 100%;
     background-color: #a5a5a5;
     margin-right: 30px;
     display: flex;
-    justify-content: center;
     margin-bottom: 15px;
     img {
-      @include size(100%, 400px);
+      max-width: 100%;
+      height: 400px;
       object-fit: cover;
     }
     .card-body {
@@ -423,14 +466,15 @@
 
 /*SERVICIOS*/
 .cabeza3__navbar {
-  @include flex;
-  justify-content: space-between;
-  position: relative;
-  padding-top: 10px;
-  padding-right: 30px;
+  @include flexx(flex, row, space-between);
+  align-items: center;
+
   .cabeza3__navbar__nav {
     @include flex;
-    gap: map-get($estilos,gap);
+    gap: map-get($estilos, gap);
+    padding-right: 30px;
+    padding-top: 10px;
+    z-index: 3;
     li {
       list-style: none;
       &:hover .cabeza3__navbar__subnav {
@@ -464,56 +508,55 @@
     }
   }
 }
-
 .menu3 {
-  margin-top: 100px;
+  img {
+    @include size(910px, 810px);
+  }
   .menu3__taller1 {
-    @include flexx(flex, row, space-between);
-    background-color: #fff;
-    height: 800px;
-    .taller1 {
-      display: flex;
-      align-self: center;
-      @include size(40%, 90%);
-      margin-left: 50px;
-    }
+    @include flexx(flex,row,space-evenly);
+    background: linear-gradient(-160deg, #fff 70%, #3374db 30%);
     p {
-      @include flex;
+      @include flexx(flex, row, center);
+      align-items: center;
       align-self: center;
-      color: black;
+      color: map-get($estilos, colorf2);
       font-size: 50px;
-      padding-right: 400px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bolder;
+    }
+    img {
+      padding: 100px;
     }
   }
   .menu3__taller2 {
-    @include flexx(flex, row-reverse, space-between);
-    background-color: #a5a5a5;
-    height: 800px;
-    .taller2 {
-      display: flex;
-      align-self: center;
-      height: 90%;
-      width: 40%;
-      margin-right: 50px;
-    }
+    background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
+    @include flexx(flex,row-reverse,space-evenly);
     p {
-      @include flex;
+      @include flexx(flex, row, center);
       align-items: center;
-      padding: 200px;
-      height: inherit;
+      font-family: "Roboto", sans-serif;
+      color: map-get($estilos, colorF);
       text-align: center;
-      color: black;
-      font-size: 20px;
+      font-size: x-large;
+      font-weight: lighter;
+    }
+    img {
+      padding: 100px;
     }
   }
 }
+.pie--usados {
+  margin-top: 0%;
+}
 /*CONTACTOS*/ /*CONTACTOS*/
-*{margin: 0%;
-padding: 0%}
+* {
+  margin: 0%;
+  padding: 0%;
+}
 .cabeza4__navbar {
   @include flexx(flex, row, space-between);
+  align-items: center;
   padding-top: 10px;
-  padding-right: 30px;
   a {
     color: $colorFuenteDeLink;
     text-decoration: none;
@@ -533,13 +576,13 @@ padding: 0%}
     }
   }
   .navbar4__nav {
-    @include flex;
+    @include flexx(flex, row, space-around);
     gap: map-get($estilos, gap);
     #nav1 {
       display: none;
       position: absolute;
       background-color: #fff;
-      width: 65%;
+      width: 70%;
       left: -100%;
       padding: 20px;
       margin-left: 35%;
@@ -558,83 +601,69 @@ padding: 0%}
     #nav2 {
       display: none;
       position: absolute;
-      margin-left: 20px;
     }
   }
 }
 .contacto {
-  @include flexx(flex,row,center);
   background-image: url(../multimedia/atencion);
   background-size: cover;
   background-position: center;
-  height: 550px;
-  color: map-get($estilos,colorF );
-  .divCont{
-    margin-top: 80px;
-    @include flexbox(flex,column);
-    h3{
-      @include flexx (flex,row,center);
+  @include flexx(flex, column, space-around);
+  align-items: center;
+  height: 600px;
+  color: map-get($estilos, colorF);
+  img {
+    max-height: 100%;
+  }
+  .divCont {
+    background-color: rgba(0, 0, 0, 0.398);
+    @include flexbox(flex, column);
+    h3 {
+      @include flexx(flex, row, center);
     }
-    p{
-      @include flexx(flex,row,center);
+    p {
+      @include flex;
     }
   }
-  .consultas{
-    padding-top: 20px;
-    background-color: map-get($estilos,color);
-   /* @include flexx(flex, column, center);*/
-    @include size(600px, 150px);
+  .consultas {
+    margin-top: 20px;
+    height: 120px;
+    background-color: map-get($estilos, color);
+    @include flexx(flex, column, center);
     border-start-start-radius: 20%;
     border-end-end-radius: 20%;
-
-    p{
-      @include flexx(flex,row,center);
+    p {
+      @include flexx(flex, row, center);
     }
-    div{
-      /*@include flexx(flex,column,center);*/
-      
-      a{
-        @include flexx(flex,row,center);
-        color:$colorFuenteDeLink;
+    div {
+      @include flexx(flex, row, center);
+      a {
+        color: $colorFuenteDeLink;
         text-decoration: none;
-        background-color:green;
-     
+
+        border-radius: 10px;
+        @include size(100px, 30px);
+        @include flexx(flex, row, center);
+        align-items: center;
+        transition: all 0.3s;
+        &:hover {
+          @include size(105px, 35px);
+        }
       }
     }
   }
-
- 
-  /*.consultas{
-    
-   
-    border-start-start-radius: 20%;
-    border-end-end-radius: 20%;
-    @include size(600px,100px);
-    background-color: map-get($estilos,color);
-  p{
-    @include flexx(flex,row,center);
-  } 
-  div{
-    a{
-    text-decoration: none;
-    color:$colorFuenteDeLink;
-    }
-    @include flexx(flex,row,center);
-    background-color:green;
-    width: 100px;
-    margin-left: 40%;
-    border-radius: 50px;
-  } 
-  
-}*/
 }
 /*FORM*/
 .formCont {
-  @include flexx(flex, row, center);
+  margin-top: 100px;
+  @include flexx(flex, row, space-evenly);
+  div {
+    @include flex;
+    align-items: center;
+  }
   .formulario {
     @include flexbox(flex, column);
     align-items: center;
-    margin-top: 100px;
     color: black;
     background-color: #bdb9b996;
     box-shadow: -10px 0px 10px 0px black, 10px 0px 10px 0px black;
@@ -677,6 +706,5 @@ padding: 0%}
     }
   }
 }
-
 
 @import "mediaqueries";

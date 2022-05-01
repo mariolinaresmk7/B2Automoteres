@@ -21,12 +21,24 @@
     @include flex;
     text-decoration: none;
     color: map-get($estilos,colorF);
-    transition: 1s;
+    transition: 0.5s;
     &:hover {
-      color: rgb(11, 127, 199);
       font-size: 50px;
     }
   }
+  .fa-facebook:hover{
+    color:map-get($redes,facebook);
+    transition: 0.2s;
+  }
+  .fa-instagram:hover{
+    color: map-get($redes,instagram);
+    transition: 0.2s;
+  }
+  .fa-youtube:hover{
+    color:map-get($redes, youtube);
+    transition: 0.2s;
+  }
+
   }
 .pie__legal {
   margin-top: 30px;

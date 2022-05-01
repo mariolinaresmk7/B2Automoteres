@@ -12,11 +12,6 @@
     div {
       @include flex;
       align-items: center;
-      h3 {
-        padding-left: 15px;
-        color: map-get($estilos,colorF);
-        font-family:'Roboto', sans-serif;
-      }
     }
   }
   

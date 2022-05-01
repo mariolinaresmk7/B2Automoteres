@@ -25,9 +25,19 @@ $colorFuenteDeLink: aliceblue;
 $estilos: (
     color:rgb(44, 44, 44),
     colorF:aliceblue,
+    colorf2:black,
     centro: center,
     gap:50px,
-    
-
-)
+);
+$redes:(
+    facebook:#3b5998,
+    instagram: #833AB4,
+    youtube: #c4302b,
+    whatsapp:#075e54,
+);
+@each $red, $color in $redes {
+    .bton3--#{$red} {
+        background-color: $color;
+    } 
+}
 

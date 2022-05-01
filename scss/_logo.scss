@@ -1,10 +1,12 @@
 .logo {
-  border-radius: 10%;
-  @include size(70px,45px);
+  @include size(400px,55px);
+  object-fit:cover;
+  object-position: center;
   animation-name: animacion;
   animation-duration: 2s;
   animation-iteration-count: initial;
   animation-timing-function: linear;
-
-  
+}
+.logo2{
+  display: none
 }

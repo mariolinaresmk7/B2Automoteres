@@ -1,11 +1,18 @@
 /*MEDIA QUERI INDEX*/
 @media (max-width: 768px) {
   .header {
+    @include flexx(flex, column, space-around);
     border-bottom: none;
     padding-top: 10px;
+    height: 80px;
   }
   .logo {
-    @include size(40px, 40px);
+    display: none;
+  }
+  .logo2 {
+    @include flexx(flex, column, start);
+    @include size(150px, 50px);
+    object-fit: scale-down;
   }
   .navbar__checkbtn {
     display: block;
@@ -13,23 +20,21 @@
   .navbar__icon {
     position: fixed;
     right: 20px;
-    top: 15px;
+    top: 20px;
     filter: invert(1);
     img {
       display: block;
     }
   }
-
   .navbar {
     flex-direction: row;
     justify-content: space-between;
   }
   .navbar__nav {
-    display: flex;
-    flex-direction: column;
+    @include flexbox(flex, column);
     align-items: center;
     position: fixed;
-    gap: 0px;
+    padding: 10px;
     top: 70px;
     left: -100%;
     background-color: map-get($estilos, color);
@@ -39,14 +44,10 @@
     max-height: 100vh;
     right: 0;
     transition: all 0.5s;
-    li {
-      padding: 0.5rem;
-    }
     a {
       font-weight: normal;
     }
   }
-
   #toggler:checked ~ .navbar__nav {
     left: 0%;
   }
@@ -96,21 +97,44 @@
     }
   }
 
-  .pie__legal {
-    display: flex;
-    align-items: flex-start;
-  }
-  .pie__links {
-    display: flex;
-    flex-direction: column;
+  .razones {
+    background: linear-gradient(45deg, #3374db 50%, #fff 50%);
+    margin-top: 120px;
+    @include flexx(flex, column, space-around);
+    height: 1300px;
     div {
-      display: flex;
-      justify-content: space-evenly;
+      h2 {
+        @include flexx(flex, row, center);
+        color: map-get($estilos, colorf2);
+      }
     }
-    font-size: 20px;
+    .razones1 {
+      @include flexx(flex, column, center);
+      align-self: center;
+      .razones__card {
+        align-self: center;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .pie {
+    margin-top: 50px;
+    .pie__legal {
+      display: flex;
+      align-items: flex-start;
+    }
+    .pie__links {
+      display: flex;
+      flex-direction: column;
+      div {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      font-size: 20px;
+    }
   }
 }
-
 @media (min-width: 768px) and (max-width: 992px) {
   .navbar {
     justify-content: space-between;
@@ -195,13 +219,29 @@
       height: 400px;
     }
   }
+  .razones {
+    background: linear-gradient(45deg, #3374db 50%, #fff 50%);
+    margin-top: 120px;
+    @include flexx(flex, column, space-evenly);
+    height: 1500px;
+    div {
+      h2 {
+        @include flexx(flex, row, center);
+        color: map-get($estilos, colorf2);
+      }
+    }
+    .razones1 {
+      @include flexx(flex, column, center);
+      align-items: center;
+      .razones__card {
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 /*MEDIA QUERIES 0KM*/
 @media (max-width: 768px) {
-  .header--okm {
-    padding-bottom: 10px;
-  }
   .navbar1 {
     flex-direction: column;
     justify-content: start;
@@ -210,7 +250,7 @@
       flex-direction: column;
       align-items: center;
       position: fixed;
-      top: 50px;
+      top: 70px;
       z-index: 4;
       left: -100%;
       background-color: map-get($estilos, color);
@@ -219,7 +259,6 @@
       right: 0;
       transition: all 0.5s;
       padding: 5px;
-      gap: 5px;
       border-top: 1px solid #fff;
       border-bottom: 1px solid #fff;
     }
@@ -248,6 +287,10 @@
     margin-right: 0%;
     transform: skew(0deg);
   }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .header--okm {
@@ -275,7 +318,6 @@
       align-items: center;
       position: fixed;
       top: 50px;
-      z-index: 4;
       left: -100%;
       background-color: map-get($estilos, color);
       width: 100%;
@@ -283,7 +325,6 @@
       right: 0;
       transition: all 0.5s;
       padding: 5px;
-      gap: 5px;
       border-top: 1px solid #fff;
       border-bottom: 1px solid #fff;
     }
@@ -296,16 +337,6 @@
 
 /*USADOS*/
 @media (max-width: 768px) {
-  .header--usados {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  .navbar__icon--usados {
-    right: 15px;
-    top: 10px;
-  }
-
   .cabeza2__navbar ul {
     flex-direction: column;
     align-items: center;
@@ -314,7 +345,7 @@
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     position: fixed;
-    top: 50px;
+    top: 60px;
     left: -100%;
     background-color: map-get($estilos, color);
     width: 100%;
@@ -329,27 +360,25 @@
     justify-content: center;
   }
   .tarjetas {
-    display: flex;
-    flex-direction: column;
-  }
-  .card {
-    display: flex;
-    align-self: center;
-
-    width: 250px;
-    height: 400px;
-  }
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    @include flexx(flex, row, start);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    .card {
+      display: flex;
+      align-self: center;
+      width: 250px;
+      height: 400px;
+      white-space: nowrap;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .card {
-    @include size(350px, 450px);
-  }
   .cabeza2__navbar ul {
     flex-direction: column;
     align-items: center;
@@ -384,157 +413,206 @@
       text-align: center;
     }
   }
+  .card {
+    @include size(350px, 450px);
+  }
 }
 /*SERVICIOS*/
-/*@media (max-width: 768px) {
-  .cabeza3__navbar__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-    position: fixed;
-    top: 40px;
-    left: -100%;
-    background-color: #fff;
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-    z-index: 6;
-    .cabeza3__navbar__subnav {
-      background-image: none;
-    }
-  }
-
+@media (max-width: 768px) {
   .cabeza3__navbar {
-    font-weight: normal;
-  }
-
-  #toggler:checked ~ ul {
-    left: 0%;
+    @include flexx(flex, column, center);
+    .cabeza3__navbar__nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      background-color: map-get($estilos, color);
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      max-height: 100vh;
+      right: 0;
+      transition: all 0.5s;
+      z-index: 6;
+      .cabeza3__navbar__subnav {
+        background-image: none;
+      }
+    }
   }
   .menu3 {
+    img {
+      @include size(610px, 510px);
+    }
     .menu3__taller1 {
-      height: 600px;
-      @include flexx(flex,column,center);
-      #taller1s {
-        @include size(300px,300px);
+      @include flexx(flex, column-reverse, space-evenly);
+      img {
+        padding: 50px;
+        align-self: center;
+      }
+    }
+    .menu3__taller2 {
+      @include flexx(flex, column, center);
+      img {
+        align-self: center;
+        padding: 50px;
+      }
+      p {
+        @include flexx(flex, row, center);
+        align-self: center;
+      }
+    }
+  }
+  .pie--usados {
+    margin-top: 0%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .cabeza3__navbar {
+    @include flexx(flex, column, center);
+    .cabeza3__navbar__nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      background-color: map-get($estilos, color);
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      max-height: 100vh;
+      right: 0;
+      transition: all 0.5s;
+      z-index: 6;
+      .cabeza3__navbar__subnav {
+        background-image: none;
+      }
+    }
+  }
+  .menu3 {
+    img {
+      @include size(710px, 610px);
+    }
+    .menu3__taller1 {
+      @include flexx(flex, column-reverse, space-evenly);
+      img {
+        padding: 50px;
+        align-self: center;
       }
       p{
-        width: 100%;
-        margin-left: 30%;
+      align-self: center
       }
-
     }
-    
-  }
-
-  .menu3__taller2 {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
-    p {
-      font-size: 16px;
-    }
-    #taller2s {
-      width: 300px;
-      height: 300px;
+    .menu3__taller2 {
+      @include flexx(flex, column, center);
+      img {
+        align-self: center;
+        padding: 50px;
+      }
+      p {
+        @include flexx(flex, row, center);
+        align-self: center;
+      }
     }
   }
-  
-
-}*/
-
-@media (min-width: 768px) and (max-width: 970px) {
-  
-  .menu3__taller1 {
-    height: 400px;
-    p {
-      margin-left: 50px;
-      font-size: 30px;
-    }
-    #taller1s {
-      width: 500px;
-      height: 500px;
-    }
+  .pie--usados {
+    margin-top: 0%;
   }
-
-  
-  .menu3__taller2 {
-    height: 500px;
-    
-    #taller2s {
-      @include size(500px,500px)
-    }
-  }
-  
 }
 /*CONTACTO*/
-/*
 @media (max-width: 768px) {
-  .navbar__icon--contactos {
-    filter: invert(1);
-  }
-
-  .navbar4__nav {
+  .cabeza4__navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding-top: 5px;
-    position: fixed;
-    top: 50px;
-    left: -100%;
-    background-color: #fff;
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-    #nav1 {
-      background-image: none;
+    flex-direction: row;
+
+    .navbar4__nav {
+      @include flexbox(flex, column);
+      align-items: center;
+      position: fixed;
+      padding: 10px;
+      top: 70px;
+      left: -100%;
+      background-color: map-get($estilos, color);
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      max-height: 100vh;
+      right: 0;
+      transition: all 0.5s;
+      a {
+        color: map-get($estilos, colorF);
+      }
+      #nav1 {
+        background-color: #a5a5a5;
+        background-image: none;
+        a {
+          color: $colorFuenteDeLink;
+        }
+        li {
+          color: map-get($estilos, colorf2);
+        }
+      }
     }
-    a {
-      color: black;
-    }
-  
   }
-  .consultas{
-    
+  .contacto {
+    @include flexx(flex, column, space-around);
   }
-  
+  .formCont {
+    @include flexx(flex, column, space-around);
+    height: 1000px;
+    margin-top: 50px;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 970px) {
-  .fondo {
-    background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-  .cabeza4__navbar ul {
-    justify-content: flex-start;
-  }
+@media (min-width: 768px) and (max-width: 992px) {
   .divCont {
     display: flex;
     justify-content: center;
   }
-  .pie__legal {
+  .cabeza4__navbar {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row;
+    .navbar4__nav {
+      @include flexbox(flex, column);
+      align-items: center;
+      position: fixed;
+      padding: 10px;
+      top: 70px;
+      left: -100%;
+      background-color: map-get($estilos, color);
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      max-height: 100vh;
+      right: 0;
+      transition: all 0.5s;
+      a {
+        color: map-get($estilos, colorF);
+      }
+      #nav1 {
+        background-color: #a5a5a5;
+        background-image: none;
+        a {
+          color: $colorFuenteDeLink;
+        }
+        li {
+          color: map-get($estilos, colorf2);
+          padding: 10px;
+        }
+      }
+    }
   }
-  .pie__pie--contactos h2 {
-    text-align: left;
-    font-size: 20px;
-  }
-  .form-select {
-    width: 80%;
-  }
-  .input-group {
-    margin-top: 15px;
-    width: 80%;
-  }
-  .mb-3 {
-    margin-top: 15px;
-    width: 80%;
+  .formCont {
+    @include flexx(flex, column, space-around);
+    align-items: center;
+    height: 1000px;
+    margin-top: 50px;
   }
 }
-*/
