@@ -27,9 +27,9 @@
 }
 
 .navbar {
-  @include flex;
-  justify-content: space-between;
+  @include flexx(flex, row, space-between);
   align-items: center;
+  padding-top: 10px;
   a {
     color: $colorFuenteDeLink;
     text-decoration: none;
@@ -39,49 +39,47 @@
   }
 }
 .navbar__nav {
-  @include flex;
-  padding-right: 30px;
+  @include flexx(flex,row,space-between);
   padding-top: 10px;
   gap: map-get($estilos, gap);
-  list-style: none;
-  z-index: 3;
-  li ul {
-    list-style: none;
-  }
   li {
     &:hover .navbar__subnav {
       display: block;
       left: 0%;
+      width: 90%;
+    }
+    ul {
+      list-style: none;
+    }
+  }
+  .navbar__subnav {
+    display: none;
+    position: absolute;
+    background-color:#fff;
+    width:70%;
+    left: -100%;
+    padding: 20px;
+    margin-left: 20%;
+    background-image: url(../multimedia/2081);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y:center;
+    animation-name: animacion;
+    animation-duration: 0.2s;
+    a{
+      color: black;
+      font-weight: bold;
+    }
+    ul li {
+      position: relative;
+      display: block;
+      color: black;
     }
   }
 }
 
-.navbar__subnav {
-  display: none;
-  position: absolute;
-  background-color: #a5a5a5;
-  width: 70%;
-  left: -100%;
-  padding: 20px;
-  margin-left: 35%;
-  background-image: url(../multimedia/2081);
-  background-size: 25%;
-  background-repeat: no-repeat;
-  background-position-x: 90%;
-  background-position-y: center;
-  animation-name: animacion;
-  animation-duration: 0.2s;
-  li {
-    width: 100px;
-    display: block;
-  }
-  ul li {
-    display: none;
-    position: relative;
-    display: block;
-    color: black;
-  }
-}
+
 .navbar__icon {
   img {
     @include size(30px, 30px);
@@ -160,10 +158,10 @@
     background-position: center;
   }
   a {
-    font-size: 20px;
     color: $colorFuenteDeLink;
     text-decoration: none;
     border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.5);
     @include flexx(flex, row, center);
     align-items: center;
     @include size(200px, 50px);
@@ -189,6 +187,7 @@
   }
   a {
     color: $colorFuenteDeLink;
+    background-color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     text-align: center;
     @include flexx(flex, row, center);
@@ -216,13 +215,14 @@
     background-position: center;
   }
   a {
-    color: black;
+    color: $colorFuenteDeLink;
+    background-color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     text-align: center;
     @include flexx(flex, row, center);
     align-items: center;
     @include size(350px, 50px);
-    border: 1px solid black;
+    border: 1px solid #fff;
     transform: translateY(-50px);
     transition: 1s all;
     &:hover {
@@ -236,7 +236,6 @@
   margin-top: 120px;
   @include flexx(flex, column, space-around);
   height: 500px;
- 
   div {
     h2 {
       @include flexx(flex, row, center);
@@ -248,16 +247,23 @@
     display: flex;
     flex-wrap: row wrap;
     justify-content: space-evenly;
+    div img{
+      @include size(610px,610px)
+    }
     .razones__card {
       background-color: map-get($estilos, color);
       @include flexx(flex, column, space-evenly);
       height: 350px;
-      img {
+      div img {
         background-blend-mode: soft-light;
         max-width: 100%;
         height: 220px;
         object-fit: cover;
         opacity: 50%;
+        &:hover{
+          opacity: 100%;
+          background-blend-mode:luminosity;
+        }
       }
       .razones__cuerpo {
         color: map-get($estilos, colorF);
@@ -465,60 +471,16 @@
 }
 
 /*SERVICIOS*/
-.cabeza3__navbar {
-  @include flexx(flex, row, space-between);
-  align-items: center;
-
-  .cabeza3__navbar__nav {
-    @include flex;
-    gap: map-get($estilos, gap);
-    padding-right: 30px;
-    padding-top: 10px;
-    z-index: 3;
-    li {
-      list-style: none;
-      &:hover .cabeza3__navbar__subnav {
-        display: block;
-        left: 0%;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: $colorFuenteDeLink;
-      &:hover {
-        border-bottom: 2px solid rgb(11, 127, 199);
-      }
-    }
-    .cabeza3__navbar__subnav {
-      position: absolute;
-      display: none;
-      z-index: 5;
-      background-color: #b3b3b3;
-      width: 70%;
-      padding: 20px;
-      left: -100%;
-      margin-left: 35%;
-      background-image: url(../multimedia/2081);
-      background-size: 25%;
-      background-repeat: no-repeat;
-      background-position-x: 80%;
-      background-position-y: center;
-      animation-name: animacion;
-      animation-duration: 0.2s;
-    }
-  }
-}
 .menu3 {
   img {
     @include size(910px, 810px);
   }
   .menu3__taller1 {
-    @include flexx(flex,row,space-evenly);
+    @include flexx(flex, row, space-evenly);
     background: linear-gradient(-160deg, #fff 70%, #3374db 30%);
     p {
       @include flexx(flex, row, center);
       align-items: center;
-      align-self: center;
       color: map-get($estilos, colorf2);
       font-size: 50px;
       font-family: "Roboto", sans-serif;
@@ -530,7 +492,7 @@
   }
   .menu3__taller2 {
     background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
-    @include flexx(flex,row-reverse,space-evenly);
+    @include flexx(flex, row-reverse , space-evenly);
     p {
       @include flexx(flex, row, center);
       align-items: center;
@@ -640,7 +602,6 @@
       a {
         color: $colorFuenteDeLink;
         text-decoration: none;
-
         border-radius: 10px;
         @include size(100px, 30px);
         @include flexx(flex, row, center);

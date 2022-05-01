@@ -1,3 +1,4 @@
+@import "variables";
 /*MEDIA QUERI INDEX*/
 @media (max-width: 768px) {
   .header {
@@ -72,31 +73,35 @@
       width: 80%;
     }
   }
-
-  .navimg__item1 {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 10px;
-    &:hover {
+  .navimg {
+    .navimg__item1 {
+      width: 300px;
       height: 300px;
+      margin-bottom: 10px;
+      &:hover {
+        height: 300px;
+      }
+    }
+    .navimg__item2 {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 10px;
+      &:hover {
+        height: 300px;
+      }
+    }
+    .navimg__item3 {
+      width: 300px;
+      height: 300px;
+      &:hover {
+        height: 300px;
+      }
+      a {
+        font-size: 16px;
+        @include size(350px, 70px);
+      }
     }
   }
-  .navimg__item2 {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 10px;
-    &:hover {
-      height: 300px;
-    }
-  }
-  .navimg__item3 {
-    width: 300px;
-    height: 300px;
-    &:hover {
-      height: 300px;
-    }
-  }
-
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
     margin-top: 120px;
@@ -135,6 +140,7 @@
     }
   }
 }
+/*MEDIA 768 A 992*/
 @media (min-width: 768px) and (max-width: 992px) {
   .navbar {
     justify-content: space-between;
@@ -200,6 +206,9 @@
     margin-bottom: 10px;
     width: 400px;
     height: 400px;
+    a {
+      font-size: 16px;
+    }
     &:hover {
       height: 400px;
     }
@@ -208,6 +217,9 @@
     margin-bottom: 10px;
     width: 400px;
     height: 400px;
+    a {
+      font-size: 16px;
+    }
     &:hover {
       height: 400px;
     }
@@ -218,6 +230,7 @@
     &:hover {
       height: 400px;
     }
+    
   }
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
@@ -419,43 +432,19 @@
 }
 /*SERVICIOS*/
 @media (max-width: 768px) {
-  .cabeza3__navbar {
-    @include flexx(flex, column, center);
-    .cabeza3__navbar__nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      position: fixed;
-      top: 70px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      z-index: 6;
-      .cabeza3__navbar__subnav {
-        background-image: none;
-      }
-    }
-  }
   .menu3 {
     img {
-      @include size(610px, 510px);
+      @include size(450px, 400px);
     }
     .menu3__taller1 {
-      @include flexx(flex, column-reverse, space-evenly);
+      @include flexx(flex, column-reverse, space-around);
       img {
         padding: 50px;
         align-self: center;
       }
     }
     .menu3__taller2 {
-      @include flexx(flex, column, center);
+      @include flexx(flex, column, space-around);
       img {
         align-self: center;
         padding: 50px;
@@ -506,8 +495,8 @@
         padding: 50px;
         align-self: center;
       }
-      p{
-      align-self: center
+      p {
+        align-self: center;
       }
     }
     .menu3__taller2 {
@@ -568,6 +557,9 @@
     @include flexx(flex, column, space-around);
     height: 1000px;
     margin-top: 50px;
+    .bton{
+      justify-content: center;
+    }
   }
 }
 
@@ -615,4 +607,5 @@
     height: 1000px;
     margin-top: 50px;
   }
+  
 }
