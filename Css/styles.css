@@ -140,6 +140,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 10px;
+  padding-right: 30px;
   gap: 50px; }
   .navbar__nav li:hover .navbar__subnav {
     display: block;

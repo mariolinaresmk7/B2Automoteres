@@ -30,6 +30,7 @@
   @include flexx(flex, row, space-between);
   align-items: center;
   padding-top: 10px;
+  
   a {
     color: $colorFuenteDeLink;
     text-decoration: none;
@@ -41,6 +42,7 @@
 .navbar__nav {
   @include flexx(flex,row,space-between);
   padding-top: 10px;
+  padding-right: 30px;
   gap: map-get($estilos, gap);
   li {
     &:hover .navbar__subnav {
