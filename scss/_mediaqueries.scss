@@ -2,7 +2,7 @@
 /*MEDIA QUERI INDEX*/
 @media (max-width: 768px) {
   .header {
-    @include flexx(flex, column, space-around);
+    @include flexx(flex, row, space-around);
     border-bottom: none;
     padding-top: 10px;
     height: 80px;

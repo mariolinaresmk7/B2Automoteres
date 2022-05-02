@@ -766,7 +766,7 @@
 @media (max-width: 768px) {
   .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     border-bottom: none;
     padding-top: 10px;
