@@ -433,25 +433,36 @@
 /*SERVICIOS*/
 @media (max-width: 768px) {
   .menu3 {
-    img {
-      @include size(450px, 400px);
-    }
     .menu3__taller1 {
-      @include flexx(flex, column-reverse, space-around);
-      img {
-        padding: 50px;
-        align-self: center;
+      @include flexx(flex, column-reverse, center);
+      align-content: flex-end;
+    
+      div img {
+        max-width: 100%;
+        height: 70%;
+        padding: 40px;
+        object-fit: cover;
+        object-position: center;
       }
+      p{
+        font-size: 20px;
+      }
+      
     }
     .menu3__taller2 {
-      @include flexx(flex, column, space-around);
-      img {
+      @include flexx(flex, column, center);
+      align-content: center;
+      div img {
+        max-width: 100%;
+        height: 70%;
         align-self: center;
-        padding: 50px;
+        padding: 40px;
       }
       p {
         @include flexx(flex, row, center);
         align-self: center;
+        font-size:16px;
+       
       }
     }
   }
@@ -460,54 +471,35 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
-  .cabeza3__navbar {
-    @include flexx(flex, column, center);
-    .cabeza3__navbar__nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      position: fixed;
-      top: 70px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      z-index: 6;
-      .cabeza3__navbar__subnav {
-        background-image: none;
-      }
-    }
-  }
+@media (min-width: 768px) and (max-width: 992px) {
   .menu3 {
     img {
       @include size(710px, 610px);
     }
     .menu3__taller1 {
       @include flexx(flex, column-reverse, space-evenly);
+      align-content: center;
       img {
+        max-width: 100%;
+        max-height: 100%;
         padding: 50px;
-        align-self: center;
       }
       p {
         align-self: center;
       }
     }
     .menu3__taller2 {
-      @include flexx(flex, column, center);
-      img {
-        align-self: center;
+      @include flexx(flex, column, space-evenly);
+      align-content: center;
+      div img {
+        max-height: 100%;
+        max-width: 100%;
         padding: 50px;
       }
       p {
-        @include flexx(flex, row, center);
+        @include flexx(flex, column, center);
         align-self: center;
+        font-size: large;
       }
     }
   }
@@ -562,7 +554,7 @@
     }
   }
 }
-
+/*MEDIA 768 a 992*/
 @media (min-width: 768px) and (max-width: 992px) {
   .divCont {
     display: flex;

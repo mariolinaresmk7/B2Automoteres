@@ -552,12 +552,14 @@
 /*SERVICIOS*/
 .menu3 img {
   width: 910px;
-  height: 810px; }
+  height: 710px;
+  object-fit: cover;
+  object-position: center; }
 
 .menu3 .menu3__taller1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: linear-gradient(-160deg, #fff 70%, #3374db 30%); }
   .menu3 .menu3__taller1 p {
     display: flex;
@@ -568,14 +570,16 @@
     font-size: 50px;
     font-family: "Roboto", sans-serif;
     font-weight: bolder; }
-  .menu3 .menu3__taller1 img {
-    padding: 100px; }
+  .menu3 .menu3__taller1 div img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 30px; }
 
 .menu3 .menu3__taller2 {
   background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-evenly; }
+  justify-content: space-between; }
   .menu3 .menu3__taller2 p {
     display: flex;
     flex-direction: row;
@@ -584,10 +588,12 @@
     font-family: "Roboto", sans-serif;
     color: aliceblue;
     text-align: center;
-    font-size: x-large;
-    font-weight: lighter; }
-  .menu3 .menu3__taller2 img {
-    padding: 100px; }
+    font-weight: lighter;
+    font-size: x-large; }
+  .menu3 .menu3__taller2 div img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 30px; }
 
 .pie--usados {
   margin-top: 0%; }
@@ -1110,79 +1116,68 @@
 
 /*SERVICIOS*/
 @media (max-width: 768px) {
-  .menu3 img {
-    width: 450px;
-    height: 400px; }
   .menu3 .menu3__taller1 {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-around; }
-    .menu3 .menu3__taller1 img {
-      padding: 50px;
-      align-self: center; }
+    justify-content: center;
+    align-content: flex-end; }
+    .menu3 .menu3__taller1 div img {
+      max-width: 100%;
+      height: 70%;
+      padding: 40px;
+      object-fit: cover;
+      object-position: center; }
+    .menu3 .menu3__taller1 p {
+      font-size: 20px; }
   .menu3 .menu3__taller2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; }
-    .menu3 .menu3__taller2 img {
+    justify-content: center;
+    align-content: center; }
+    .menu3 .menu3__taller2 div img {
+      max-width: 100%;
+      height: 70%;
       align-self: center;
-      padding: 50px; }
+      padding: 40px; }
     .menu3 .menu3__taller2 p {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-self: center; }
+      align-self: center;
+      font-size: 16px; }
   .pie--usados {
     margin-top: 0%; } }
 
-@media (min-width: 769px) and (max-width: 992px) {
-  .cabeza3__navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .cabeza3__navbar .cabeza3__navbar__nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      position: fixed;
-      top: 70px;
-      left: -100%;
-      background-color: #2c2c2c;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      z-index: 6; }
-      .cabeza3__navbar .cabeza3__navbar__nav .cabeza3__navbar__subnav {
-        background-image: none; }
+@media (min-width: 768px) and (max-width: 992px) {
   .menu3 img {
     width: 710px;
     height: 610px; }
   .menu3 .menu3__taller1 {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    align-content: center; }
     .menu3 .menu3__taller1 img {
-      padding: 50px;
-      align-self: center; }
+      max-width: 100%;
+      max-height: 100%;
+      padding: 50px; }
     .menu3 .menu3__taller1 p {
       align-self: center; }
   .menu3 .menu3__taller2 {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
-    .menu3 .menu3__taller2 img {
-      align-self: center;
+    justify-content: space-evenly;
+    align-content: center; }
+    .menu3 .menu3__taller2 div img {
+      max-height: 100%;
+      max-width: 100%;
       padding: 50px; }
     .menu3 .menu3__taller2 p {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
-      align-self: center; }
+      align-self: center;
+      font-size: large; }
   .pie--usados {
     margin-top: 0%; } }
 
@@ -1228,6 +1223,7 @@
     .formCont .bton {
       justify-content: center; } }
 
+/*MEDIA 768 a 992*/
 @media (min-width: 768px) and (max-width: 992px) {
   .divCont {
     display: flex;

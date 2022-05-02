@@ -475,10 +475,12 @@
 /*SERVICIOS*/
 .menu3 {
   img {
-    @include size(910px, 810px);
+    @include size(910px, 710px);
+    object-fit: cover;
+    object-position: center
   }
   .menu3__taller1 {
-    @include flexx(flex, row, space-evenly);
+    @include flexx(flex, row, space-between);
     background: linear-gradient(-160deg, #fff 70%, #3374db 30%);
     p {
       @include flexx(flex, row, center);
@@ -488,24 +490,29 @@
       font-family: "Roboto", sans-serif;
       font-weight: bolder;
     }
-    img {
-      padding: 100px;
+    div img {
+      max-width: 100%;
+      max-height: 100%;
+      padding: 30px;
     }
   }
   .menu3__taller2 {
     background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
-    @include flexx(flex, row-reverse , space-evenly);
+    @include flexx(flex, row-reverse , space-between);
+    
     p {
       @include flexx(flex, row, center);
       align-items: center;
       font-family: "Roboto", sans-serif;
       color: map-get($estilos, colorF);
       text-align: center;
-      font-size: x-large;
       font-weight: lighter;
+      font-size: x-large;
     }
-    img {
-      padding: 100px;
+    div img {
+      max-width: 100%;
+      max-height: 100%;
+      padding: 30px;
     }
   }
 }
