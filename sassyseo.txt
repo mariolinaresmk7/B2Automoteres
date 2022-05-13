@@ -1,8 +1,0 @@
-SASS
-*utilice un map-get en los scss _footter y _header.
-*utilice @mixin con y sin parametros a lo largo del index y las secciones
-*utilice un @extend en los botones de la seccion contactos
-
-SEO
-al index y a todas las secciones se les agrego un: meta keywords, meta description y el title.
-Se trato de tener una mejor organizacion de archivos.

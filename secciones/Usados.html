@@ -12,7 +12,6 @@
     <link rel="shortcut icon" href="../multimedia/logob2.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/6bc99cb277.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../Css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="../Css/estilos.css">-->
     <link rel="stylesheet" href="../Css/styles.css">
     <link rel="preconectar" href="https://fonts.googleapis.com">
     <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
@@ -22,21 +21,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
-<body class="container-fluid" ;>
-    <header class="row header header--usados">
-        <div class="col-lg-2 col-md-4 col-sm-12 ">
-            <a href="../index.html"><img class="logo2" src="../multimedia/logitob10.png" alt="logo 1"> </a>
-            <a href="../index.html"><img class="logo logo--usados" src="../multimedia/logitob8.png" alt="logo 2"></a>
+<body class="container-fluid">
+
+    <header class="row header">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <a href="../index.html"><img class="logo2" src="../multimedia/logitob10.png" alt="logo1" loading="lazy">
+            </a>
+            <a href="../index.html"><img class="logo" src="../multimedia/logitob8.png" alt="logo2" loading="lazy"></a>
         </div>
-        <nav class="col-lg-10 col-md-8 col-sm-12 cabeza2__navbar">
+        <nav class="col-lg-8 col-md-8 col-sm-12 navbar">
             <input type="checkbox" name="" id="toggler">
             <label for="toggler" class="navbar__checkbtn">
-                <i class="navbar__icon navbar__icon--usados"><img src="../multimedia/menu.png" alt="menu hamburguesa"></i>
+                <i class="navbar__icon"><img src="../multimedia/menu.png" alt="menu hamburguesa" loading="lazy"></i>
             </label>
-            <ul>
-                <li><a href="../secciones/0km.html">OKM</a></li>
+            <ul class="navbar__nav">
+                <li> <a href="#">VEHICULOS</a>
+                    <ul class="navbar__subnav">
+                        <li><a href="../secciones/0km.html">OKM</a>
+                            <ul>
+                                <li><a href="../secciones/0km.html#peugeot">Peugeot</a></li>
+                                <li><a href="../secciones/0km.html#citroen">Citroen</a></li>
+                                <li><a href="../secciones/0km.html#ford">Ford</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../secciones/Usados.html">USADOS</a></li>
+                    </ul>
+                </li>
                 <li><a href="../secciones/Servicios.html">SERVICIOS</a></li>
                 <li><a href="../secciones/Contacto.html">CONTACTOS</a></li>
                 <li><a href="../index.html">INICIO</a></li>
@@ -45,72 +59,59 @@
     </header>
 
     <main class="row menu2">
-        <article class="col-lg-12 col-md-12 col-sm-12">
+        <article class="col-lg-8 col-md-12 col-sm-12">
             <h3>Usados</h3>
-            <p>En B2 Automotores tambien contamos con unidades usadas que son revisadas al datalle antes de recibirlas,
+            <p>En <span>B2 Automotores</span> tambien contamos con unidades usadas que son revisadas al datalle antes de
+                recibirlas,
                 para que usted pueda comprar su vehiculo usado en total confianza.</p>
         </article>
     </main>
 
-    <div class="row tarjetas tarj">
-        <div class="col-lg-3  col-md-6 col-sm-12 card" data-aos="fade-right">
-            <img src="../multimedia/peugeot-208-allure2014-frontal-lateral-piloto-cercana-1600213519331.jpg"
-                class="card-img-top" alt="peugeot 208">
-            <div class="card-body">
-                <h5 class="card-title">Peugeot</h5>
-                <p class="card-text">208 mod15, pack cuir</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+    <div class="row tarjeta">
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/peugeot-208-allure2014-frontal-lateral-piloto-cercana-1600213519331.jpg" alt="208"
+                loading="lazy">
+            <h5>Peugeot</h5>
+            <p>208 mod15, pack cuir</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-left">
-            <img src="../multimedia/Vw-Fox-Highline-Impecable-Vendo-o-Permuto-20190519200027.jpg" class="card-img-top"
-                alt="Volkswagen fox">
-            <div class="card-body">
-                <h5 class="card-title">Volkswagen</h5>
-                <p class="card-text">Fox mod16, Confortline</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3  col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/2714--21072021190551.jpg" alt="fox" loading="lazy" >
+            <h5>Volkswagen</h5>
+            <p>Fox mod16, Confortline</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-right">
-            <img src="../multimedia/207p" class="card-img-top" alt="peugeot 207">
-            <div class="card-body">
-                <h5 class="card-title">Peugeot</h5>
-                <p class="card-text">207 GTI, mod12</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/207p.jpg" alt="peugeot 207" loading="lazy">
+            <h5>Peugeot</h5>
+            <p>207 GTI, mod12</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-left">
-            <img src="../multimedia/punto" class="card-img-top" alt="fiat punto">
-            <div class="card-body">
-                <h5 class="card-title">Fiat</h5>
-                <p class="card-text">Punto mod12, esscence</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/punto.jpg" alt="fiat punto" loading="lazy">
+            <h5>Fiat</h5>
+            <p>Punto mod12, esscence</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-down">
-            <img src="../multimedia/cliomio" class="card-img-top" alt="renault clio">
-            <div class="card-body">
-                <h5 class="card-title">Renault</h5>
-                <p class="card-text">Clio Mio mod19</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/cliomio.jpg" alt="renault clio" loading="lazy">
+            <h5>Renault</h5>
+            <p>Clio Mio, mod19</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-down">
-            <img src="../multimedia/mondeo" class="card-img-top" alt="ford mondeo">
-            <div class="card-body">
-                <h5 class="card-title">Ford</h5>
-                <p class="card-text">Mondeo Titanium, mod12</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/mondeo.jpg" alt="ford mondeo" loading="lazy">
+            <h5>Ford</h5>
+            <p>Mondeo Titanium, mod12</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 card" data-aos="fade-down">
-            <img src="../multimedia/amarok" class="card-img-top" alt="Volkswagen amarok">
-            <div class="card-body">
-                <h5 class="card-title">Volkswagen</h5>
-                <p class="card-text">Amarok, mod19</p>
-                <a href="#" class="btn btn-primary">Mas Informacion</a>
-            </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 cards" data-aos="fade-right">
+            <img src="../multimedia/amarok.jpg" alt="volkswagen amarok" loading="lazy">
+            <h5>Volkswagen</h5>
+            <p>Amarok, mod1</p>
+            <a href="#" class="btn btn-primary">Mas Informacion</a>
         </div>
+
     </div>
 
     <footer class="row pie pie--usados">
@@ -129,6 +130,7 @@
                 condiciones.</p>
         </div>
     </footer>
+
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

@@ -6,6 +6,7 @@
 .container-fluid {
   margin: 0%;
   background-image: $colorFondo;
+  font-family: "Lexend Exa", sans-serif;
 }
 
 @keyframes animacion {
@@ -26,94 +27,36 @@
   }
 }
 
-.navbar {
-  @include flexx(flex, row, space-between);
-  align-items: center;
-  padding-top: 10px;
-  
-  a {
-    color: $colorFuenteDeLink;
-    text-decoration: none;
-    &:hover {
-      border-bottom: 2px solid rgb(11, 127, 199);
-    }
-  }
-}
-.navbar__nav {
-  @include flexx(flex,row,space-between);
-  padding-top: 10px;
-  padding-right: 30px;
-  gap: map-get($estilos, gap);
-  li {
-    &:hover .navbar__subnav {
-      display: block;
-      left: 0%;
-      width: 90%;
-    }
-    ul {
-      list-style: none;
-    }
-  }
-  .navbar__subnav {
-    display: none;
-    position: absolute;
-    background-color:#fff;
-    width:70%;
-    left: -100%;
-    padding: 20px;
-    margin-left: 20%;
-    background-image: url(../multimedia/2081);
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position-x: 90%;
-    background-position-y:center;
-    animation-name: animacion;
-    animation-duration: 0.2s;
-    a{
-      color: black;
-      font-weight: bold;
-    }
-    ul li {
-      position: relative;
-      display: block;
-      color: black;
-    }
-  }
-}
-
-
-.navbar__icon {
-  img {
-    @include size(30px, 30px);
-    display: none;
-  }
-}
-#toggler {
-  display: none;
-}
 /*CORRUSEL*/
 .carousel {
-  margin-top: 10px;
-}
-.carousel-item {
-  @include size(100%, 800px);
-  background-color: rgb(0, 0, 0);
-  background-blend-mode: soft-light;
-  img {
-    object-fit: cover;
-    @include size(50%, 100%);
-    opacity: 30%;
+  * {
+    padding: 0%;
+  }
+  .carousel-indicators {
+    margin: 0%;
+    padding-bottom: 15px;
+  }
+  .carousel-item {
+    @include size(100%, 800px);
+    background-color: rgb(0, 0, 0);
+    background-blend-mode: soft-light;
+    img {
+      object-fit: cover;
+      @include size(50%, 100%);
+      opacity: 30%;
+    }
+  }
+  .carousel-caption {
+    transform: translateY(-300px);
+    h5 {
+      font-size: 60px;
+    }
+    p {
+      color: #b3b3b3;
+    }
   }
 }
-.carousel-caption {
-  transform: translateY(-300px);
-  h5 {
-    font-size: 60px;
-  }
-  p {
-    color: #b3b3b3;
-  }
-}
+
 /*MENU*/
 .menu {
   @include flexx(flex, row, space-evenly);
@@ -146,98 +89,100 @@
 .navimg {
   margin-top: 80px;
   @include flexx(flex, row, space-around);
-}
-.navimg__item1 {
-  @include size(500px, 500px);
-  @include flexx(flex, row, center);
-  background-image: url(../multimedia/208-MastheadComponent-Desktop.png);
-  background-size: 180%;
-  background-position: center;
-  align-items: flex-end;
-  transition: all 1s;
-  &:hover {
-    background-size: 200%;
-    background-position: center;
-  }
-  a {
-    color: $colorFuenteDeLink;
-    text-decoration: none;
-    border: 1px solid #fff;
-    background-color: rgba(0, 0, 0, 0.5);
+  .navimg__item1 {
+    @include size(500px, 500px);
     @include flexx(flex, row, center);
-    align-items: center;
-    @include size(200px, 50px);
-    transform: translateY(-50px);
-    transition: 1s all;
+    background-image: url(../multimedia/208-MastheadComponent-Desktop.png);
+    background-size: 180%;
+    background-position: center;
+    align-items: flex-end;
+    transition: all 1s;
     &:hover {
-      border: 1px solid #a5a5a5;
-      color: #a5a5a5;
+      background-size: 200%;
+      background-position: center;
+    }
+    a {
+      color: $colorFuenteDeLink;
+      text-decoration: none;
+      border: 1px solid #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      @include flexx(flex, row, center);
+      align-items: center;
+      @include size(200px, 50px);
+      transform: translateY(-50px);
+      transition: 1s all;
+      &:hover {
+        border: 1px solid #a5a5a5;
+        color: #a5a5a5;
+      }
+    }
+  }
+  .navimg__item2 {
+    @include flexx(flex, row, center);
+    @include size(500px, 500px);
+    background-image: url(../multimedia/AP_2018_ATELIER-VIDANGE_WORKSHOP-DRAIN_002_1214x1020.jpg);
+    background-size: 120%;
+    background-position: center;
+    align-items: flex-end;
+    transition: all 1s;
+    &:hover {
+      background-size: 140%;
+      background-position: center;
+    }
+    a {
+      color: $colorFuenteDeLink;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      text-align: center;
+      @include flexx(flex, row, center);
+      align-items: center;
+      @include size(350px, 50px);
+      border: 1px solid #fff;
+      transform: translateY(-50px);
+      transition: 1s all;
+      &:hover {
+        border: 1px solid #a5a5a5;
+        color: #a5a5a5;
+      }
+    }
+  }
+  .navimg__item3 {
+    @include flexx(flex, row, center);
+    @include size(500px, 500px);
+    background-image: url(../multimedia/fases-de-una-consultoría-integral.jpg);
+    background-size: 180%;
+    background-position: center;
+    align-items: flex-end;
+    transition: all 1s;
+    &:hover {
+      background-size: 200%;
+      background-position: center;
+    }
+    a {
+      color: $colorFuenteDeLink;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      text-align: center;
+      @include flexx(flex, row, center);
+      align-items: center;
+      @include size(350px, 80px);
+      border: 1px solid #fff;
+      transform: translateY(-50px);
+      transition: 1s all;
+      &:hover {
+        border: 1px solid #a5a5a5;
+        color: #a5a5a5;
+      }
     }
   }
 }
-.navimg__item2 {
-  @include flexx(flex, row, center);
-  @include size(500px, 500px);
-  background-image: url(../multimedia/AP_2018_ATELIER-VIDANGE_WORKSHOP-DRAIN_002_1214x1020.jpg);
-  background-size: 120%;
-  background-position: center;
-  align-items: flex-end;
-  transition: all 1s;
-  &:hover {
-    background-size: 140%;
-    background-position: center;
-  }
-  a {
-    color: $colorFuenteDeLink;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-decoration: none;
-    text-align: center;
-    @include flexx(flex, row, center);
-    align-items: center;
-    @include size(350px, 50px);
-    border: 1px solid #fff;
-    transform: translateY(-50px);
-    transition: 1s all;
-    &:hover {
-      border: 1px solid #a5a5a5;
-      color: #a5a5a5;
-    }
-  }
-}
-.navimg__item3 {
-  @include flexx(flex, row, center);
-  @include size(500px, 500px);
-  background-image: url(../multimedia/fases-de-una-consultoría-integral.jpg);
-  background-size: 180%;
-  background-position: center;
-  align-items: flex-end;
-  transition: all 1s;
-  &:hover {
-    background-size: 200%;
-    background-position: center;
-  }
-  a {
-    color: $colorFuenteDeLink;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-decoration: none;
-    text-align: center;
-    @include flexx(flex, row, center);
-    align-items: center;
-    @include size(350px, 50px);
-    border: 1px solid #fff;
-    transform: translateY(-50px);
-    transition: 1s all;
-    &:hover {
-      border: 1px solid #a5a5a5;
-      color: #a5a5a5;
-    }
-  }
-}
+
 .razones {
-  background: linear-gradient(45deg, #3374db 70%, #fff 30%);
+  background: linear-gradient(45deg, #3374db 70%, #a5a5a5 30%);
   margin-top: 120px;
   @include flexx(flex, column, space-around);
-  height: 500px;
+  height: 700px;
+
   div {
     h2 {
       @include flexx(flex, row, center);
@@ -247,32 +192,38 @@
   }
   .razones1 {
     display: flex;
-    flex-wrap: row wrap;
-    justify-content: space-evenly;
-    div img{
-      @include size(610px,610px)
+    flex-direction: row;
+    justify-content: space-around;
+    div img {
+      @include size(610px, 610px);
     }
     .razones__card {
       background-color: map-get($estilos, color);
       @include flexx(flex, column, space-evenly);
-      height: 350px;
+      height: 580px;
+      max-width: 100%;
       div img {
         background-blend-mode: soft-light;
         max-width: 100%;
-        height: 220px;
+        height: 280px;
+        padding: 5px;
         object-fit: cover;
         opacity: 50%;
-        &:hover{
+        &:hover {
           opacity: 100%;
-          background-blend-mode:luminosity;
+          background-blend-mode: luminosity;
         }
       }
       .razones__cuerpo {
         color: map-get($estilos, colorF);
+        height: 100px;
         h4 {
           @include flexx(flex, row, center);
         }
         p {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
           text-align: center;
         }
       }
@@ -281,33 +232,16 @@
 }
 
 /*SECCION OKM*/
-
-.navbar1 {
-  @include flexx(flex, row, space-between);
-  align-items: center;
-  .navbar1__nav {
-    @include flex;
-    padding-top: 15px;
-    padding-right: 30px;
-    gap: map-get($estilos, gap);
-    li {
-      list-style: none;
-      display: flex;
-      a {
-        text-decoration: none;
-        color: $colorFuenteDeLink;
-        &:hover {
-          border-bottom: 2px solid rgb(11, 127, 199);
-        }
-      }
-    }
-  }
-}
 .menu1 {
   padding-top: 70px;
-  p a {
-    text-decoration: none;
-    color: $colorFuenteDeLink;
+  article {
+    h2 {
+      font-weight: bold;
+    }
+    a {
+      text-decoration: none;
+      color: darkblue;
+    }
   }
 }
 
@@ -344,6 +278,7 @@
   transform: skew(-35deg);
 }
 .contenedor {
+  padding: 0%;
   margin-top: 80px;
   position: absolute;
   @include size(100%, 400px);
@@ -351,123 +286,136 @@
   border: 2px solid black;
   cursor: pointer;
   height: 500px;
-}
-.contenedor__slide {
-  position: relative;
-  height: 100%;
-  flex: 1;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-  &:hover {
-    flex-grow: 5;
-  }
-  &:nth-child(1) {
-    background-image: url(../multimedia/territory);
-    background-size: cover;
-    background-position: center;
-  }
-  &:nth-child(2) {
-    background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
-    background-position: center;
-    background-size: cover;
-  }
-  &:nth-child(3) {
-    background-image: url(../multimedia/c4);
-    background-size: cover;
-    background-position: center;
-  }
-  &:nth-child(4) {
-    background-image: url(../multimedia/3008ESTORE.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-  &:nth-child(5) {
-    background-image: url(../multimedia/ranger-raptor);
-    background-size: cover;
-    background-position: center;
-  }
-}
-.tabla {
-  margin-top: 650px;
-  @include flexbox(flex, column);
-  align-items: center;
-  h2 {
-    text-decoration: underline;
-  }
-  table {
-    margin-top: 50px;
-    width: 70%;
+  .contenedor__slide {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      flex-grow: 5;
+    }
+    &:nth-child(1) {
+      background-image: url(../multimedia/territory.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    &:nth-child(2) {
+      background-image: url(../multimedia/peugeot-208-lightspeed.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(3) {
+      background-image: url(../multimedia/c4.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    &:nth-child(4) {
+      background-image: url(../multimedia/3008ESTORE.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    &:nth-child(5) {
+      background-image: url(../multimedia/ranger-raptor.jpg);
+      background-size: cover;
+      background-position: center;
+    }
   }
 }
 
-/*SECCION USADOS*/
-
-.cabeza2__navbar {
-  @include flexx(flex, row, space-between);
-  align-items: center;
-  ul {
-    @include flex;
-    padding-right: 30px;
-    padding-top: 10px;
-    gap: map-get($estilos, gap);
-    li {
-      list-style: none;
-      a {
-        text-decoration: none;
+.menu11 {
+  * {
+    margin: 0%;
+  }
+  background-color: $colorFooter;
+  h1 {
+    @include flexx(flex, row, center);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: map-get($estilos, colorF);
+  }
+  margin-top: 700px;
+  .peugeot {
+    background-color: black;
+    @include flexx(flex, row, space-between);
+    div {
+      @include flexx(flex, column, center);
+      h3,
+      p {
+        @include flexx(flex, row, start);
         color: map-get($estilos, colorF);
-        &:hover {
-          border-bottom: 2px solid rgb(11, 127, 199);
+      }
+    }
+  }
+  .ford {
+    @extend .peugeot;
+    flex-direction: row-reverse;
+    div {
+      @extend div ;
+      h3,
+      p {
+        @include flexx(flex, row, flex-end);
+      }
+    }
+  }
+  .citroen {
+    @extend .peugeot;
+  }
+}
+
+.tabla {
+  margin-top: 50px;
+  div {
+    @include flexx(flex, column, center);
+    h2 {
+      text-decoration: underline;
+    }
+    table {
+      thead {
+        border-bottom: 2px solid black;
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid darkgray;
         }
       }
     }
   }
 }
 
+/*SECCION USADOS*/
 .menu2 {
   margin-top: 50px;
-  @include flexbox(flex, column);
+  @include flexx(flex, row, center);
   h3 {
     @include flex;
     justify-content: center;
     font-weight: bold;
+    text-decoration: double underline;
   }
   p {
     color: black;
     text-align: center;
     margin-bottom: 30px;
     font-size: large;
+    span {
+      color: darkblue;
+      font-weight: bold;
+    }
   }
 }
-.tarjetas {
+.tarjeta {
   @include flexx(flex, row, center);
-
-  .card {
-    max-width: 100%;
-    background-color: #a5a5a5;
+  .cards {
+    background-color: darkgray;
+    @include flexx(flex, column, center);
+    align-items: center;
+    padding: 10px;
     margin-right: 30px;
-    display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     img {
       max-width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-    .card-body {
-      @include flexx(flex, column, center);
-      align-items: center;
-      .btn {
-        background-color: rgba(0, 0, 0, 0.5);
-        &:hover {
-          background-color: deepskyblue;
-        }
-      }
-    }
-    a {
-      color: $colorFuenteDeLink;
-      border: 1px solid aliceblue;
-      text-decoration: none;
-      padding: 5px;
-      margin-bottom: 20px;
+      height: 350px;
     }
   }
 }
@@ -477,7 +425,7 @@
   img {
     @include size(910px, 710px);
     object-fit: cover;
-    object-position: center
+    object-position: center;
   }
   .menu3__taller1 {
     @include flexx(flex, row, space-between);
@@ -498,16 +446,16 @@
   }
   .menu3__taller2 {
     background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
-    @include flexx(flex, row-reverse , space-between);
-    
+    @include flexx(flex, row-reverse, space-between);
     p {
       @include flexx(flex, row, center);
       align-items: center;
       font-family: "Roboto", sans-serif;
       color: map-get($estilos, colorF);
-      text-align: center;
-      font-weight: lighter;
-      font-size: x-large;
+      text-align: justify;
+      font-weight: bolder;
+      font-size: large;
+      font-family: "Lexend Exa", sans-serif;
     }
     div img {
       max-width: 100%;
@@ -519,64 +467,10 @@
 .pie--usados {
   margin-top: 0%;
 }
+
 /*CONTACTOS*/ /*CONTACTOS*/
-* {
-  margin: 0%;
-  padding: 0%;
-}
-.cabeza4__navbar {
-  @include flexx(flex, row, space-between);
-  align-items: center;
-  padding-top: 10px;
-  a {
-    color: $colorFuenteDeLink;
-    text-decoration: none;
-    &:hover {
-      border-bottom: 2px solid rgb(11, 127, 199);
-    }
-  }
-  li {
-    list-style: none;
-    &:hover #nav1 {
-      display: block;
-      left: 0%;
-    }
-    &:hover #nav2 {
-      @include flexbox(flex, column);
-      position: relative;
-    }
-  }
-  .navbar4__nav {
-    @include flexx(flex, row, space-around);
-    gap: map-get($estilos, gap);
-    #nav1 {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      width: 70%;
-      left: -100%;
-      padding: 20px;
-      margin-left: 35%;
-      background-image: url(../multimedia/2081);
-      background-size: 25%;
-      background-repeat: no-repeat;
-      background-position-x: 90%;
-      background-position-y: center;
-      animation-name: animacion;
-      animation-duration: 0.2s;
-      a {
-        color: black;
-        font-weight: bold;
-      }
-    }
-    #nav2 {
-      display: none;
-      position: absolute;
-    }
-  }
-}
 .contacto {
-  background-image: url(../multimedia/atencion);
+  background-image: url(../multimedia/atencion.jpg);
   background-size: cover;
   background-position: center;
   @include flexx(flex, column, space-around);
@@ -587,22 +481,19 @@
     max-height: 100%;
   }
   .divCont {
-    background-color: rgba(0, 0, 0, 0.398);
+    background-color: rgba(0, 0, 0, 0.4);
     @include flexbox(flex, column);
+    align-items: center;
     h3 {
       @include flexx(flex, row, center);
     }
-    p {
-      @include flex;
-    }
   }
   .consultas {
-    margin-top: 20px;
-    height: 120px;
     background-color: map-get($estilos, color);
     @include flexx(flex, column, center);
-    border-start-start-radius: 20%;
-    border-end-end-radius: 20%;
+    border-start-start-radius: 8%;
+    border-end-end-radius: 8%;
+    height: 140px;
     p {
       @include flexx(flex, row, center);
     }
@@ -623,10 +514,10 @@
     }
   }
 }
-/*FORM*/
 .formCont {
   margin-top: 100px;
   @include flexx(flex, row, space-evenly);
+
   div {
     @include flex;
     align-items: center;

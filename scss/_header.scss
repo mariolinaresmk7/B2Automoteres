@@ -1,17 +1,79 @@
-@import "variables";
-
 .header {
-    background-color:map-get($estilos,color);
-    border-bottom: 1px solid #fff;
-    @include flexx (flex, row, space-between);
+  background-color: $colorFooter;
+  border-bottom: 1px solid #fff;
+  @include flexx(flex, row, space-between);
+  align-items: center;
+  position: sticky;
+  top: 0%;
+  z-index: 9;
+  height: 65px;
+  div {
+    @include flex;
     align-items: center;
-    position: sticky;
-    top: 0%;
-    z-index: 9;
-    height: 65px;
-    div {
-      @include flex;
-      align-items: center;
+    .logo {
+      @include size(400px,50px);
+      object-fit:cover;
+      object-position: center;
+      animation-name: animacion;
+      animation-duration: 2s;
+      animation-iteration-count: initial;
+      animation-timing-function: linear;
+    }
+    .logo2{
+      display: none
     }
   }
-  
+  .navbar {
+    display: flex;
+    .navbar__icon {
+      img {
+        @include size(30px, 30px);
+        display: none;
+      }
+    }
+    #toggler {
+      display: none;
+    }
+    .navbar__nav {
+      @include flexx(flex, row, space-between);
+      gap: map-get($estilos, gap);
+      padding-top: 10px;
+      padding-right: 30px;
+      li {
+        list-style: none;
+        &:hover .navbar__subnav {
+          @include flexx(flex, column, space-evenly);
+          
+        }
+        a {
+          text-decoration: none;
+          color: $colorFuenteDeLink;
+          text-decoration: none;
+          &:hover {
+            border-bottom: 2px solid rgb(11, 127, 199);
+          }
+        }
+      }
+      .navbar__subnav {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        right: 0px;
+        height: 50vh;
+        background-image: url(../multimedia/2081.jpg);
+        background-size:35%;
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: center;
+        display: none;
+        a {
+          color: black;
+          font-weight: bold;
+        }
+        ul li{
+          padding: 25px;
+        }
+      }
+    }
+  }
+}

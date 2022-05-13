@@ -1,61 +1,56 @@
-@import "variables";
+
 /*MEDIA QUERI INDEX*/
 @media (max-width: 768px) {
   .header {
-    @include flexx(flex, row, space-around);
     border-bottom: none;
-    padding-top: 10px;
-    height: 80px;
-  }
-  .logo {
-    display: none;
-  }
-  .logo2 {
-    @include flexx(flex, column, start);
-    @include size(150px, 50px);
-    object-fit: scale-down;
-  }
-  .navbar__checkbtn {
-    display: block;
-  }
-  .navbar__icon {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    filter: invert(1);
-    img {
-      display: block;
+    div {
+      .logo {
+        display: none;
+      }
+      .logo2 {
+        @include flexx(flex, row, start);
+        @include size(150px, 50px);
+        object-fit: scale-down;
+        margin-top: 7px;
+      }
+    }
+    .navbar {
+      flex-direction: row;
+      .navbar__checkbtn {
+        display: block;
+      }
+      .navbar__icon {
+        position: fixed;
+        right: 20px;
+        top: 15px;
+        filter: invert(1);
+        img {
+          display: block;
+        }
+      }
+      .navbar__nav {
+        @include flexx(flex, column, center);
+        align-items: center;
+        position: fixed;
+        padding: 10px;
+        top: 70px;
+        left: -100%;
+        background-color: map-get($estilos, color);
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        max-height: 100vh;
+        right: 0;
+        transition: all 0.5s;
+        a {
+          font-weight: normal;
+        }
+      }
+      #toggler:checked ~ .navbar__nav {
+        left: 0%;
+      }
     }
   }
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .navbar__nav {
-    @include flexbox(flex, column);
-    align-items: center;
-    position: fixed;
-    padding: 10px;
-    top: 70px;
-    left: -100%;
-    background-color: map-get($estilos, color);
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-    a {
-      font-weight: normal;
-    }
-  }
-  #toggler:checked ~ .navbar__nav {
-    left: 0%;
-  }
-  .navbar__subnav {
-    background-image: none;
-  }
-
   .carousel {
     display: none;
   }
@@ -89,6 +84,9 @@
       &:hover {
         height: 300px;
       }
+      a{
+        @include size(350px,70px)
+      }
     }
     .navimg__item3 {
       width: 300px;
@@ -105,8 +103,9 @@
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
     margin-top: 120px;
-    @include flexx(flex, column, space-around);
-    height: 1300px;
+    @include flexx(flex, column, space-evenly);
+    height: 1800px;
+
     div {
       h2 {
         @include flexx(flex, row, center);
@@ -117,6 +116,8 @@
       @include flexx(flex, column, center);
       align-self: center;
       .razones__card {
+        height: 500px;
+        justify-content: center;
         align-self: center;
         margin-top: 20px;
       }
@@ -142,51 +143,48 @@
 }
 /*MEDIA 768 A 992*/
 @media (min-width: 768px) and (max-width: 992px) {
-  .navbar {
-    justify-content: space-between;
-    a {
-      padding-right: 0px;
-    }
-    .navbar__checkbtn {
-      display: block;
-    }
-    .navbar__icon {
-      position: fixed;
-      right: 20px;
-      top: 15px;
-      filter: invert(1);
-      img {
+  .header {
+    .navbar {
+      .navbar__checkbtn {
         display: block;
       }
-    }
-    .navbar__nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      gap: 0px;
-      top: 70px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      li {
-        padding: 0.5rem;
+      .navbar__icon {
+        position: fixed;
+        right: 20px;
+        top: 15px;
+        filter: invert(1);
+        img {
+          display: block;
+        }
       }
-      a {
-        font-weight: normal;
+      .navbar__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        padding: 10px;
+        top: 70px;
+        left: -100%;
+        background-color: map-get($estilos, color);
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        max-height: 100vh;
+        right: 0;
+        transition: all 0.5s;
+        li {
+          padding: 0.5rem;
+        }
+        a {
+          font-weight: normal;
+        }
       }
-    }
 
-    #toggler:checked ~ .navbar__nav {
-      left: 0%;
+      #toggler:checked ~ .navbar__nav {
+        left: 0%;
+      }
     }
   }
-
   .menu {
     display: flex;
     flex-direction: column;
@@ -230,13 +228,11 @@
     &:hover {
       height: 400px;
     }
-    
   }
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
-    margin-top: 120px;
     @include flexx(flex, column, space-evenly);
-    height: 1500px;
+    height: 1800px;
     div {
       h2 {
         @include flexx(flex, row, center);
@@ -247,6 +243,7 @@
       @include flexx(flex, column, center);
       align-items: center;
       .razones__card {
+        height: 500px;
         margin-top: 20px;
       }
     }
@@ -255,32 +252,6 @@
 
 /*MEDIA QUERIES 0KM*/
 @media (max-width: 768px) {
-  .navbar1 {
-    flex-direction: column;
-    justify-content: start;
-    .navbar1__nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      top: 70px;
-      z-index: 4;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      padding: 5px;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-    }
-  }
-
-  #toggler:checked ~ .navbar1__nav {
-    left: 0%;
-  }
-
   .menu1__marca__itemA {
     font-size: 20px;
     margin-right: 0%;
@@ -304,123 +275,61 @@
     display: flex;
     flex-direction: column;
   }
+  .tabla {
+    * {
+      padding: 0;
+    }
+    table {
+      margin-top: 40px;
+    }
+  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .header--okm {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .navbar__checkbtn {
-    display: block;
-  }
-  .navbar__icon {
-    position: fixed;
-    right: 20px;
-    top: 15px;
-    filter: invert(1);
-    img {
-      display: block;
-    }
-  }
-  .navbar1 {
-    flex-direction: column;
-    justify-content: start;
-    .navbar1__nav {
-      display: flex;
-      flex-direction: column;
+  .menu11 {
+    .peugeot {
+      @include flexx(flex, column, space-around);
       align-items: center;
-      position: fixed;
-      top: 50px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      padding: 5px;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
     }
-  }
-
-  #toggler:checked ~ .navbar1__nav {
-    left: 0%;
+    .ford {
+      @include flexx(flex, column, space-around);
+      align-items: center;
+      div {
+        h3,
+        p {
+          @include flexx(flex, row, flex-start);
+        }
+      }
+    }
+    .citroen{
+      @include flexx(flex, column, space-around);
+      align-items: center;
+    }
   }
 }
 
 /*USADOS*/
 @media (max-width: 768px) {
-  .cabeza2__navbar ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding-top: 5px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    position: fixed;
-    top: 60px;
-    left: -100%;
-    background-color: map-get($estilos, color);
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-  }
-  #toggler:checked ~ ul {
-    left: 0%;
-  }
-  .menu2 {
-    justify-content: center;
-  }
-  .tarjetas {
-    @include flexx(flex, row, start);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    .card {
-      display: flex;
-      align-self: center;
-      width: 250px;
-      height: 400px;
-      white-space: nowrap;
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+  .tarjeta {
+    @include flexx(flex, column, center);
+    margin: 0;
+    .cards {
+      margin-right: 0px;
+      img {
+        object-fit: scale-down;
+      }
     }
   }
 }
-
+/*Media 768 a 992px*/
 @media (min-width: 768px) and (max-width: 992px) {
-  .cabeza2__navbar ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding-top: 5px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    position: fixed;
-    top: 50px;
-    left: -100%;
-    background-color: map-get($estilos, color);
-    width: 100%;
-    max-height: 100vh;
-    right: 0;
-    transition: all 0.5s;
-  }
-  #toggler:checked ~ ul {
-    left: 0%;
-  }
-
   .menu2 {
     display: flex;
     justify-content: center;
-
     h3 {
       text-align: center;
       font-weight: bold;
     }
-    article p {
+    p {
       margin-top: 10px;
       font-size: medium;
       text-align: center;
@@ -432,11 +341,14 @@
 }
 /*SERVICIOS*/
 @media (max-width: 768px) {
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
   .menu3 {
     .menu3__taller1 {
       @include flexx(flex, column-reverse, center);
-      align-content: flex-end;
-    
       div img {
         max-width: 100%;
         height: 70%;
@@ -444,25 +356,23 @@
         object-fit: cover;
         object-position: center;
       }
-      p{
-        font-size: 20px;
+      p {
+        font-size: 30px;
       }
-      
     }
     .menu3__taller2 {
       @include flexx(flex, column, center);
-      align-content: center;
       div img {
         max-width: 100%;
         height: 70%;
-        align-self: center;
         padding: 40px;
+        object-fit: cover;
+        object-position: center;
       }
       p {
         @include flexx(flex, row, center);
         align-self: center;
-        font-size:16px;
-       
+        font-size: 16px;
       }
     }
   }
@@ -509,89 +419,38 @@
 }
 /*CONTACTO*/
 @media (max-width: 768px) {
-  .cabeza4__navbar {
-    display: flex;
-    flex-direction: row;
-
-    .navbar4__nav {
-      @include flexbox(flex, column);
-      align-items: center;
-      position: fixed;
-      padding: 10px;
-      top: 70px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      a {
-        color: map-get($estilos, colorF);
-      }
-      #nav1 {
-        background-color: #a5a5a5;
-        background-image: none;
-        a {
-          color: $colorFuenteDeLink;
-        }
-        li {
-          color: map-get($estilos, colorf2);
-        }
-      }
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
   }
   .contacto {
-    @include flexx(flex, column, space-around);
+    .divCont {
+      align-content: flex-start;
+    }
+    .consultas {
+      height: 140px;
+    }
   }
   .formCont {
     @include flexx(flex, column, space-around);
     height: 1000px;
     margin-top: 50px;
-    .bton{
+    .bton {
       justify-content: center;
     }
   }
 }
-/*MEDIA 768 a 992*/
+/*Media 768 a 992*/
 @media (min-width: 768px) and (max-width: 992px) {
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
   .divCont {
     display: flex;
     justify-content: center;
-  }
-  .cabeza4__navbar {
-    display: flex;
-    flex-direction: row;
-    .navbar4__nav {
-      @include flexbox(flex, column);
-      align-items: center;
-      position: fixed;
-      padding: 10px;
-      top: 70px;
-      left: -100%;
-      background-color: map-get($estilos, color);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      width: 100%;
-      max-height: 100vh;
-      right: 0;
-      transition: all 0.5s;
-      a {
-        color: map-get($estilos, colorF);
-      }
-      #nav1 {
-        background-color: #a5a5a5;
-        background-image: none;
-        a {
-          color: $colorFuenteDeLink;
-        }
-        li {
-          color: map-get($estilos, colorf2);
-          padding: 10px;
-        }
-      }
-    }
   }
   .formCont {
     @include flexx(flex, column, space-around);
@@ -599,5 +458,4 @@
     height: 1000px;
     margin-top: 50px;
   }
-  
 }
