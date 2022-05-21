@@ -376,6 +376,7 @@
     }
     .menu3__taller1 {
       background: none;
+      background-color: #CCCFD2;
       @include flexx(flex, column-reverse, space-evenly);
       align-content: center;
       img {
@@ -389,7 +390,7 @@
     }
     .menu3__taller2 {
       background: none;
-      
+      background-color: #CCCFD2;
       @include flexx(flex, column, space-evenly);
       align-content: center;
       div img {
