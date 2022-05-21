@@ -55,51 +55,8 @@
     }
   }
 }
-.carruseldemovil {
-  height: 60vh;
-  overflow: hidden;
-  display: none;
-  .carruselItem {
-    padding: 0%;
-    height: 100%;
-    position: relative;
-    background-color: rgb(0, 0, 0);
-    background-blend-mode: soft-light;
-    .tarjetitas {
-      height: 100%;
-      color: #fff;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        opacity: 50%;
-      }
-      h3{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    .flechas {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      align-items: center;
-      z-index: 4;
-      i{
-        color: #fff;
-      }
-    }
-  }
+.carruseldemovil{
+  display: none
 }
 
 .menu {
@@ -283,10 +240,10 @@
       font-weight: bold;
     }
     a {
-      color:#3374db;
+      color: #3374db;
     }
-    span{
-      color:#3374db;
+    span {
+      color: #3374db;
       font-weight: bold;
     }
   }
@@ -329,7 +286,7 @@
   margin-top: 80px;
   position: absolute;
   @include size(100%, 400px);
-  @include flexbox(flex,row);
+  @include flexbox(flex, row);
   border: 2px solid black;
   cursor: pointer;
   height: 500px;
@@ -435,7 +392,7 @@
   margin-top: 50px;
   @include flexx(flex, row, center);
   h3 {
-    @include flexx(flex,row,center);
+    @include flexx(flex, row, center);
     font-weight: bold;
     text-decoration: double underline;
   }
@@ -445,7 +402,7 @@
     margin-bottom: 30px;
     font-size: large;
     span {
-      color:#3374db;
+      color: #3374db;
       font-weight: bold;
     }
   }
@@ -566,7 +523,7 @@
   margin-top: 100px;
   @include flexx(flex, row, space-evenly);
   div {
-    @include flexbox(flex,row);
+    @include flexbox(flex, row);
     align-items: center;
   }
   .formulario {

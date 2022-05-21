@@ -65,7 +65,7 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner col-sm-12">
       <div class="carousel-item animate__animated animate__fadeIn active">
         <img src="./multimedia/208-MastheadComponent-Desktop.png" class="d-block w-100" alt="208 0km" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
@@ -100,38 +100,26 @@
   </div>
 
   <div class="row carruseldemovil">
-    <div class="carruselItem" id="carruselItem-1">
-      <div class="tarjetitas">
+    <ul class="col-sm-12 slider">
+      <li id="slide1">
         <img src="./multimedia/3008ESTORE.jpg" alt="peugeot 0km" loading="lazy">
-        <h3>Busca tu 0km</h3>
-      </div>
-      <div class="flechas">
-        <a href="#carruselItem-3"><i class="fa-solid fa-chevron-left"></i></a>
-        <a href="#carruselItem-2"><i class="fa-solid fa-chevron-right"></i></a>
-      </div>
-    </div>
-
-    <div class="carruselItem" id="carruselItem-2">
-      <div class="tarjetitas">
+        <h2>Busca tu 0km</h2>
+      </li>
+      <li id="slide2"> 
         <img src="./multimedia/cc.jpg" alt="volkswagen cc" loading="lazy">
-        <h3>Busca tu Usado</h3>
-      </div>
-      <div class="flechas">
-        <a href="#carruselItem-1"><i class="fa-solid fa-chevron-left"></i></a>
-        <a href="#carruselItem-3"><i class="fa-solid fa-chevron-right"></i></a>
-      </div>
-    </div>
-
-    <div class="carruselItem" id="carruselItem-3">
-      <div class="tarjetitas">
-        <img src="./multimedia/taller-mecanico-como-elegirlo-2-ce7898.jpg" alt="servicio taller" loading="lazy">
-        <h3>Servicio post-ventas</h3>
-      </div>
-      <div class="flechas">
-        <a href="#carruselItem-2"><i class="fa-solid fa-chevron-left"></i></a>
-        <a href="#carruselItem-1"><i class="fa-solid fa-chevron-right"></i></a>
-      </div>
-    </div>
+        <h2>Busca tu Usado</h2>
+      </li>
+      <li id="slide3">
+        <img src="./multimedia/taller-mecanico-como-elegirlo-2-ce7898.jpg" alt="servicio taller"
+          loading="lazy">
+        <h2>Servicios post-ventas</h2>
+      </li>
+    </ul>
+    <ul class="col-sm-12 sliderBottom">
+      <li><a href="#slide1"><i class="fa-solid fa-window-minimize"></i></a> </li>
+      <li><a href="#slide2"><i class="fa-solid fa-window-minimize"></i></a> </li>
+      <li><a href="#slide3"><i class="fa-solid fa-window-minimize"></i></a> </li>
+    </ul>
   </div>
 
   <main class="row menu">
@@ -219,7 +207,7 @@
   </footer>
 
   <script src="./js/bootstrap.min.js"></script>
- 
+
 
 </body>
 
