@@ -965,6 +965,7 @@
 @media (max-width: 768px) {
   .menu3 .menu3__taller1 {
     background: none;
+    background-color: #CCCFD2;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center; }
@@ -978,6 +979,7 @@
       font-size: 30px; }
   .menu3 .menu3__taller2 {
     background: none;
+    background-color: #CCCFD2;
     display: flex;
     flex-direction: column;
     justify-content: center; }

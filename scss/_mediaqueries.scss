@@ -332,6 +332,7 @@
   .menu3 {
     .menu3__taller1 {
       background:none;
+      background-color: #CCCFD2;
       @include flexx(flex, column-reverse, center);
       div img {
         max-width: 100%;
@@ -346,6 +347,7 @@
     }
     .menu3__taller2 {
       background: none;
+      background-color: #CCCFD2;
       @include flexx(flex, column, center);
       div img {
         max-width: 100%;
