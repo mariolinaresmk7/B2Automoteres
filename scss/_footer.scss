@@ -7,10 +7,10 @@
 }
 
 .pie__links {
-  @include flex;
-  justify-content: space-evenly;
+  @include flexx(flex,row,space-evenly);
   align-items: center;
   padding-top: 25px;
+  height: 80px;
   div{
     display: flex;
     justify-content: space-evenly;
@@ -18,7 +18,7 @@
   }
   a {
     font-size: 25px;
-    @include flex;
+    @include flexbox(flex,row);
     text-decoration: none;
     color: map-get($estilos,colorF);
     transition: 0.5s;

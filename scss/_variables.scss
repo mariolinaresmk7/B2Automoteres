@@ -8,10 +8,7 @@ $colorFuenteDeLink: aliceblue;
     flex-direction: $direction;
     
 }
-@mixin flex {
-    display: flex;
-    flex-direction: row;
-}
+
 @mixin flexx ($flex,$direction,$justify){
     display: $flex;
     flex-direction:$direction;

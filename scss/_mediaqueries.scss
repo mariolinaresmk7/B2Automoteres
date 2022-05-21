@@ -1,4 +1,5 @@
-/*MEDIA QUERI INDEX*/
+/*MEDIA QUERI*/
+//INDEX
 @media (max-width: 768px) {
   .header {
     border-bottom: none;
@@ -54,52 +55,23 @@
   .carousel {
     display: none;
   }
+  .carruseldemovil {
+    display: block;
+  }
   .menu {
     margin-top: 60px;
     height: auto;
     width: 100%;
     margin-left: 0%;
-
     article {
       width: auto;
       margin-top: 30px;
     }
-    .img {
-      width: 80%;
+    img {
+      @include size(80%, 50%);
     }
   }
-  .navimg {
-    .navimg__item1 {
-      width: 300px;
-      height: 300px;
-      margin-bottom: 10px;
-      &:hover {
-        height: 300px;
-      }
-    }
-    .navimg__item2 {
-      width: 300px;
-      height: 300px;
-      margin-bottom: 10px;
-      &:hover {
-        height: 300px;
-      }
-      a {
-        @include size(350px, 70px);
-      }
-    }
-    .navimg__item3 {
-      width: 300px;
-      height: 300px;
-      &:hover {
-        height: 300px;
-      }
-      a {
-        font-size: 16px;
-        @include size(350px, 70px);
-      }
-    }
-  }
+  
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
     margin-top: 120px;
@@ -141,7 +113,8 @@
     }
   }
 }
-/*MEDIA 768 A 992*/
+
+// media de 768 a 992
 @media (min-width: 768px) and (max-width: 992px) {
   .header {
     .navbar {
@@ -188,15 +161,14 @@
   .menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    img {
+      width: 60%;
+      height: 40%;
+      border-radius: 5%;
+    }
     article {
       margin-top: 30px;
       width: auto;
-    }
-    .img {
-      width: 40%;
-      height: 40%;
-      border-radius: 5%;
     }
   }
 
@@ -250,7 +222,7 @@
   }
 }
 
-/*MEDIA QUERIES 0KM*/
+//SECCION 0KM
 @media (max-width: 768px) {
   .menu1 {
     .menu1__marca__itemA {
@@ -276,6 +248,7 @@
   .contenedor {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
   }
   .menu11 {
     .ford {
@@ -296,6 +269,7 @@
     }
   }
 }
+//media de 768 a 992
 @media (min-width: 768px) and (max-width: 992px) {
   .menu11 {
     .peugeot {
@@ -319,7 +293,7 @@
   }
 }
 
-/*USADOS*/
+//SECCION USADOS
 @media (max-width: 768px) {
   .tarjeta {
     @include flexx(flex, column, center);
@@ -332,7 +306,7 @@
     }
   }
 }
-/*Media 768 a 992px*/
+//Media 768 a 992px
 @media (min-width: 768px) and (max-width: 992px) {
   .menu2 {
     display: flex;
@@ -351,15 +325,13 @@
     @include size(350px, 450px);
   }
 }
-/*SERVICIOS*/
+
+//SECCION SERVICIOS
 @media (max-width: 768px) {
-  * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-  }
+ 
   .menu3 {
     .menu3__taller1 {
+      background:none;
       @include flexx(flex, column-reverse, center);
       div img {
         max-width: 100%;
@@ -373,6 +345,7 @@
       }
     }
     .menu3__taller2 {
+      background: none;
       @include flexx(flex, column, center);
       div img {
         max-width: 100%;
@@ -392,13 +365,15 @@
     margin-top: 0%;
   }
 }
-/*Media 768 a 992 px*/
+
+//media de 768 a 992
 @media (min-width: 768px) and (max-width: 992px) {
   .menu3 {
     img {
       @include size(710px, 610px);
     }
     .menu3__taller1 {
+      background: none;
       @include flexx(flex, column-reverse, space-evenly);
       align-content: center;
       img {
@@ -411,6 +386,8 @@
       }
     }
     .menu3__taller2 {
+      background: none;
+      
       @include flexx(flex, column, space-evenly);
       align-content: center;
       div img {
@@ -429,7 +406,8 @@
     margin-top: 0%;
   }
 }
-/*CONTACTO*/
+
+//SECCION CONTACTOS 
 @media (max-width: 768px) {
   * {
     box-sizing: border-box;
@@ -446,7 +424,7 @@
   }
   .formCont {
     @include flexx(flex, column, space-between);
-    height: 1200px;
+    height: 1100px;
     margin-top: 50px;
     .bton {
       justify-content: center;
@@ -471,7 +449,7 @@
     }
   }
 }
-/*Media 768 a 992*/
+//Media de 768 a 992
 @media (min-width: 768px) and (max-width: 992px) {
   * {
     margin: 0%;

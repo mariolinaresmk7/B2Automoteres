@@ -20,18 +20,16 @@
   <link rel="stylesheet" href="./Css/styles.css">
   <link rel="preconectar" href="https://fonts.googleapis.com">
   <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https: //fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="container-fluid">
 
   <header class="row header">
     <div class="col-lg-4 col-md-4 col-sm-12">
-      <a href="./index.html"><img class="logo2" src="./multimedia/logitob10.png" alt="logo1"loading="lazy"> </a>
-      <a href="./index.html"><img class="logo" src="./multimedia/logitob8.png" alt="logo2"loading="lazy"></a>
+      <a href="./index.html"><img class="logo2" src="./multimedia/logitob10.png" alt="logo1" loading="lazy"> </a>
+      <a href="./index.html"><img class="logo" src="./multimedia/logitob8.png" alt="logo2" loading="lazy"></a>
     </div>
     <nav class="col-lg-8 col-md-8 col-sm-12 navbar">
       <input type="checkbox" name="" id="toggler">
@@ -44,8 +42,8 @@
             <li><a href="./secciones/0km.html">OKM</a>
               <ul>
                 <li><a href="./secciones/0km.html#peugeot">Peugeot</a></li>
-                <li><a href="./secciones/0km.html#citroen">Citroen</a></li>
                 <li><a href="./secciones/0km.html#ford">Ford</a></li>
+                <li><a href="./secciones/0km.html#citroen">Citroen</a></li>
               </ul>
             </li>
             <li><a href="./secciones/Usados.html">USADOS</a></li>
@@ -69,21 +67,22 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item animate__animated animate__fadeIn active">
-        <img src="./multimedia/208-MastheadComponent-Desktop.png" class="d-block w-100" alt="208 0km"loading="lazy">
+        <img src="./multimedia/208-MastheadComponent-Desktop.png" class="d-block w-100" alt="208 0km" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5>SUBITE A TU 0KM</h5>
           <p>Contamos con toda la linea Peugeot, Ford, Citroen</p>
         </div>
       </div>
       <div class="carousel-item animate__animated animate__fadeIn">
-        <img src="./multimedia/cc.jpg" class="d-block w-100" alt="passat cc usados" style="object-fit: cover;" loading="lazy">
+        <img src="./multimedia/cc.jpg" class="d-block w-100" alt="passat cc usados" style="object-fit: cover;"
+          loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5>TAMBIEN TENEMOS UNIDADES USADAS</h5>
           <p>Todos nuestro vehiculos usados estan certificados por nuestro taller</p>
         </div>
       </div>
       <div class="carousel-item animate__animated animate__fadeIn">
-        <img src="./multimedia/taller.jpg" class="d-block w-100" alt="taller mecanico"loading="lazy">
+        <img src="./multimedia/taller.jpg" class="d-block w-100" alt="taller mecanico" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5>SERVICIOS</h5>
           <p>Contamos con un staff capacitado para brindarte servicios post-venta</p>
@@ -100,9 +99,43 @@
     </button>
   </div>
 
+  <div class="row carruseldemovil">
+    <div class="carruselItem" id="carruselItem-1">
+      <div class="tarjetitas">
+        <img src="./multimedia/3008ESTORE.jpg" alt="peugeot 0km" loading="lazy">
+        <h3>Busca tu 0km</h3>
+      </div>
+      <div class="flechas">
+        <a href="#carruselItem-3"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="#carruselItem-2"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+
+    <div class="carruselItem" id="carruselItem-2">
+      <div class="tarjetitas">
+        <img src="./multimedia/cc.jpg" alt="volkswagen cc" loading="lazy">
+        <h3>Busca tu Usado</h3>
+      </div>
+      <div class="flechas">
+        <a href="#carruselItem-1"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="#carruselItem-3"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+
+    <div class="carruselItem" id="carruselItem-3">
+      <div class="tarjetitas">
+        <img src="./multimedia/taller-mecanico-como-elegirlo-2-ce7898.jpg" alt="servicio taller" loading="lazy">
+        <h3>Servicio post-ventas</h3>
+      </div>
+      <div class="flechas">
+        <a href="#carruselItem-2"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="#carruselItem-1"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
 
   <main class="row menu">
-    <img class="col-lg-5 col-md-5 col-sm-12 img" src="./multimedia/venta-de-auto.jpg" alt="quienes somos" loading="lazy">
+    <img class="col-lg-5 col-md-5 col-sm-12" src="./multimedia/venta-de-auto.jpg" alt="quienes somos" loading="lazy">
     <Section class="col-lg-5 col-md-5 col-sm-12">
       <article>
         <h2>¿QUIENES SOMOS?</h2>
@@ -110,7 +143,8 @@
           comercializacion
           nos avalan, nuestra mision es brindar soluciones integrales de movilidad a nuestros
           clientes.
-          Ponemos a disposición, nuestra gama de autos <span>0km</span> como tambien <span>usados</span> que son revisados minuciosamente,
+          Ponemos a disposición, nuestra gama de autos <span>0km</span> como tambien <span>usados</span> que son
+          revisados minuciosamente,
           los
           servicios post-ventas
           y el asesoramiento comercial especializado para que cuente con facilidades
@@ -123,9 +157,9 @@
   <div class="row navimg">
     <div class="col-lg-4 col-md-12 navimg__item1">
       <a href="./secciones/0km.html">BUSCA TU 0KM</a>
-        </div>
-        <div class=" col-lg-4 col-md-12 navimg__item2">
-        <a href="./secciones/Servicios.html">CONTAMOS CON EL MEJOR POST-VENTA PARA QUE CUIDES TU AUTO</a>
+    </div>
+    <div class=" col-lg-4 col-md-12 navimg__item2">
+      <a href="./secciones/Servicios.html">CONTAMOS CON EL MEJOR POST-VENTA PARA QUE CUIDES TU AUTO</a>
     </div>
     <div class="col-lg-4 col-md-12 navimg__item3">
       <a href="./secciones/Contacto.html">NO TE QUEDE CON DUDAS, CONSULTANOS LO QUE QUERES SABER</a>
@@ -133,7 +167,7 @@
   </div>
 
   <main class="row razones">
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-md-12 col-lg-12">
       <h2>Razones para comprar un auto en B2</h2>
     </div>
     <div class="row razones1">
@@ -148,10 +182,10 @@
       </div>
       <div class="col-lg-3 col-md-8 col-sm-8 razones__card">
         <div>
-          <img src="./multimedia/XYDB7JFL25D7JC6UNHERMW2ESQ.JPG" alt="taller"loading="lazy">
+          <img src="./multimedia/XYDB7JFL25D7JC6UNHERMW2ESQ.JPG" alt="taller" loading="lazy">
         </div>
         <div class="razones__cuerpo">
-          <h4>Reacondicionamos nuestros autos</h4>
+          <h4>Acondicionamos las unidades</h4>
           <p>Tenemos un equipo de trabajo dedicado a dejarlos en excelente estado.</p>
         </div>
       </div>
@@ -166,7 +200,6 @@
       </div>
     </div>
   </main>
-
 
   <footer class="row pie">
     <div class="col-lg-12 col-md-12 col-sm-12 pie__links">
@@ -186,6 +219,7 @@
   </footer>
 
   <script src="./js/bootstrap.min.js"></script>
+ 
 
 </body>
 

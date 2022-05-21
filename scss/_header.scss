@@ -8,7 +8,7 @@
   z-index: 9;
   height: 65px;
   div {
-    @include flex;
+    @include flexbox(flex,row);
     align-items: center;
     .logo {
       @include size(400px,50px);
@@ -39,26 +39,11 @@
       gap: map-get($estilos, gap);
       padding-top: 10px;
       padding-right: 30px;
-      li {
-        list-style: none;
-        &:hover .navbar__subnav {
-          @include flexx(flex, column, space-evenly);
-          
-        }
-        a {
-          text-decoration: none;
-          color: $colorFuenteDeLink;
-          text-decoration: none;
-          &:hover {
-            border-bottom: 2px solid rgb(11, 127, 199);
-          }
-        }
-      }
       .navbar__subnav {
         position: absolute;
         background-color: #fff;
         width: 100%;
-        right: 0px;
+        right: 0;
         height: 50vh;
         background-image: url(../multimedia/2081.jpg);
         background-size:35%;
@@ -74,6 +59,21 @@
           padding: 25px;
         }
       }
+      li {
+        list-style: none;
+        &:hover .navbar__subnav {
+          @include flexx(flex, column, space-evenly);
+        }
+        a {
+          text-decoration: none;
+          color: $colorFuenteDeLink;
+          text-decoration: none;
+          &:hover {
+            border-bottom: 2px solid rgb(11, 127, 199);
+          }
+        }
+      }
+      
     }
   }
 }

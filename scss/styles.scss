@@ -26,7 +26,7 @@
   }
 }
 
-/*INDEX*/
+//INDEX
 .carousel {
   * {
     padding: 0%;
@@ -55,6 +55,52 @@
     }
   }
 }
+.carruseldemovil {
+  height: 60vh;
+  overflow: hidden;
+  display: none;
+  .carruselItem {
+    padding: 0%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    background-blend-mode: soft-light;
+    .tarjetitas {
+      height: 100%;
+      color: #fff;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 50%;
+      }
+      h3{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .flechas {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+      z-index: 4;
+      i{
+        color: #fff;
+      }
+    }
+  }
+}
 
 .menu {
   @include flexx(flex, row, space-evenly);
@@ -62,28 +108,30 @@
   color: black;
   margin-top: 15px;
   height: 850px;
-  p {
-    font-size: 18px;
-    text-align: justify;
-    line-height: 25px;
-    span{
-      color: #3374db;
-      font-weight: bold
-    }
-  }
+
   section {
     @include flexx(flex, column, center);
     width: 500px;
+    h2 {
+      text-align: center;
+      padding-bottom: 15px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+      text-align: justify;
+      line-height: 25px;
+      span {
+        color: #3374db;
+        font-weight: bold;
+      }
+    }
   }
-  .img {
+  img {
+    padding: 0%;
     border-radius: 5%;
     @include size(40%, 60%);
     box-shadow: -10px 10px 20px 0px black;
-  }
-  h2 {
-    text-align: center;
-    padding-bottom: 15px;
-    font-weight: bold;
   }
 }
 
@@ -150,7 +198,7 @@
   .navimg__item3 {
     @include flexx(flex, row, center);
     @include size(500px, 500px);
-    background-image: url(../multimedia/fases-de-una-consultoría-integral.jpg);
+    background-image: url(../multimedia/consultoria.jpg);
     background-size: 180%;
     background-position: center;
     align-items: flex-end;
@@ -191,22 +239,21 @@
     }
   }
   .razones1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    @include flexx(flex, row, space-around);
     div img {
       @include size(610px, 610px);
     }
     .razones__card {
       background-color: map-get($estilos, color);
       @include flexx(flex, column, space-evenly);
-      height: 580px;
+      height: 520px;
       max-width: 100%;
       div img {
         background-blend-mode: soft-light;
         max-width: 100%;
         height: 280px;
-        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
         object-fit: cover;
         opacity: 50%;
         &:hover {
@@ -216,22 +263,19 @@
       }
       .razones__cuerpo {
         color: map-get($estilos, colorF);
-        height: 100px;
+        margin-top: 5px;
         h4 {
-          @include flexx(flex, row, center);
+          text-align: start;
         }
         p {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          text-align: center;
+          text-align: justify;
         }
       }
     }
   }
 }
 
-/*SECCION OKM*/
+//SECCION OKM
 .menu1 {
   padding-top: 70px;
   article {
@@ -239,50 +283,53 @@
       font-weight: bold;
     }
     a {
-      text-decoration: none;
-      color: darkblue;
+      color:#3374db;
     }
+    span{
+      color:#3374db;
+      font-weight: bold;
+    }
+  }
+  .menu1__marca__itemA {
+    margin-top: 50px;
+    background-color: darkblue;
+    display: flex;
+    color: map-get($estilos, colorF);
+    font-size: 30px;
+    margin-right: 70%;
+    margin-left: 15px;
+    transform: skew(-35deg);
+  }
+  .menu1__marca__itemB {
+    margin-top: 10px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: start;
+    color: map-get($estilos, colorF);
+    font-size: 30px;
+    margin-left: 27.5%;
+    margin-right: 25px;
+    transform: skew(-35deg);
+  }
+  .menu1__marca__itemC {
+    margin-top: 10px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: start;
+    color: map-get($estilos, colorF);
+    font-size: 30px;
+    margin-left: 26%;
+    margin-right: 45px;
+    transform: skew(-35deg);
   }
 }
 
-.menu1__marca__itemA {
-  margin-top: 50px;
-  background-color: darkblue;
-  display: flex;
-  color: map-get($estilos, colorF);
-  font-size: 30px;
-  margin-right: 70%;
-  margin-left: 15px;
-  transform: skew(-35deg);
-}
-.menu1__marca__itemB {
-  margin-top: 10px;
-  background-color: darkblue;
-  display: flex;
-  justify-content: start;
-  color: map-get($estilos, colorF);
-  font-size: 30px;
-  margin-left: 27.5%;
-  margin-right: 25px;
-  transform: skew(-35deg);
-}
-.menu1__marca__itemC {
-  margin-top: 10px;
-  background-color: darkblue;
-  display: flex;
-  justify-content: start;
-  color: map-get($estilos, colorF);
-  font-size: 30px;
-  margin-left: 26%;
-  margin-right: 45px;
-  transform: skew(-35deg);
-}
 .contenedor {
   padding: 0%;
   margin-top: 80px;
   position: absolute;
   @include size(100%, 400px);
-  @include flex;
+  @include flexbox(flex,row);
   border: 2px solid black;
   cursor: pointer;
   height: 500px;
@@ -323,7 +370,7 @@
   }
 }
 
-.menu11 {
+.menuNovedades {
   * {
     margin: 0%;
   }
@@ -383,13 +430,12 @@
   }
 }
 
-/*SECCION USADOS*/
+//SECCION USADOS
 .menu2 {
   margin-top: 50px;
   @include flexx(flex, row, center);
   h3 {
-    @include flex;
-    justify-content: center;
+    @include flexx(flex,row,center);
     font-weight: bold;
     text-decoration: double underline;
   }
@@ -399,7 +445,7 @@
     margin-bottom: 30px;
     font-size: large;
     span {
-      color: darkblue;
+      color:#3374db;
       font-weight: bold;
     }
   }
@@ -417,14 +463,15 @@
       max-width: 100%;
       height: 300px;
     }
-    h5, p {
+    h5,
+    p {
       font-weight: bold;
-      color: #fff
+      color: #fff;
     }
   }
 }
 
-/*SERVICIOS*/
+//SECCION SERVICIOS
 .menu3 {
   img {
     @include size(910px, 710px);
@@ -433,33 +480,30 @@
   }
   .menu3__taller1 {
     @include flexx(flex, row, space-between);
-    background: linear-gradient(-160deg, #fff 70%, #3374db 30%);
+    background: linear-gradient(-160deg, rgb(242, 240, 240) 70%, #3374db 30%);
     p {
       @include flexx(flex, row, center);
       align-items: center;
       color: map-get($estilos, colorf2);
       font-size: 50px;
-      font-family: "Roboto", sans-serif;
       font-weight: bolder;
     }
     div img {
       max-width: 100%;
       max-height: 100%;
-      padding: 30px;
+      padding: 40px;
     }
   }
   .menu3__taller2 {
-    background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
+    background: linear-gradient(160deg, rgb(242, 240, 240) 70%, #3374db 30%);
     @include flexx(flex, row-reverse, space-between);
     p {
       @include flexx(flex, row, center);
       align-items: center;
-      font-family: "Roboto", sans-serif;
-      color: map-get($estilos, colorF);
+      color: black;
       text-align: justify;
       font-weight: bolder;
       font-size: large;
-      font-family: "Lexend Exa", sans-serif;
     }
     div img {
       max-width: 100%;
@@ -472,7 +516,7 @@
   margin-top: 0%;
 }
 
-/*CONTACTOS*/
+//SECCION CONTACTOS
 .contacto {
   background-image: url(../multimedia/atencion.jpg);
   background-size: cover;
@@ -507,7 +551,7 @@
         color: $colorFuenteDeLink;
         text-decoration: none;
         border-radius: 10px;
-        @include size(100px, 30px);
+        @include size(136px, 36px);
         @include flexx(flex, row, center);
         align-items: center;
         transition: all 0.3s;
@@ -521,9 +565,8 @@
 .formCont {
   margin-top: 100px;
   @include flexx(flex, row, space-evenly);
-
   div {
-    @include flex;
+    @include flexbox(flex,row);
     align-items: center;
   }
   .formulario {

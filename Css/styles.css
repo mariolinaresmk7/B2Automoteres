@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .bton3--facebook {
   background-color: #3b5998; }
 
@@ -22,7 +21,7 @@
   top: 0%;
   z-index: 9;
   height: 65px; }
-  .header div, .header .menu11 .ford div, .menu11 .ford .header div {
+  .header div, .header .menuNovedades .ford div, .menuNovedades .ford .header div {
     display: flex;
     flex-direction: row;
     align-items: center; }
@@ -52,23 +51,11 @@
       gap: 50px;
       padding-top: 10px;
       padding-right: 30px; }
-      .header .navbar .navbar__nav li {
-        list-style: none; }
-        .header .navbar .navbar__nav li:hover .navbar__subnav {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly; }
-        .header .navbar .navbar__nav li a {
-          text-decoration: none;
-          color: aliceblue;
-          text-decoration: none; }
-          .header .navbar .navbar__nav li a:hover {
-            border-bottom: 2px solid #0b7fc7; }
       .header .navbar .navbar__nav .navbar__subnav {
         position: absolute;
         background-color: #fff;
         width: 100%;
-        right: 0px;
+        right: 0;
         height: 50vh;
         background-image: url(../multimedia/2081.jpg);
         background-size: 35%;
@@ -81,6 +68,18 @@
           font-weight: bold; }
         .header .navbar .navbar__nav .navbar__subnav ul li {
           padding: 25px; }
+      .header .navbar .navbar__nav li {
+        list-style: none; }
+        .header .navbar .navbar__nav li:hover .navbar__subnav {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly; }
+        .header .navbar .navbar__nav li a {
+          text-decoration: none;
+          color: aliceblue;
+          text-decoration: none; }
+          .header .navbar .navbar__nav li a:hover {
+            border-bottom: 2px solid #0b7fc7; }
 
 .bton3--facebook {
   background-color: #3b5998; }
@@ -106,8 +105,9 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 25px; }
-  .pie__links div, .pie__links .menu11 .ford div, .menu11 .ford .pie__links div {
+  padding-top: 25px;
+  height: 80px; }
+  .pie__links div, .pie__links .menuNovedades .ford div, .menuNovedades .ford .pie__links div {
     display: flex;
     justify-content: space-evenly;
     gap: 100px; }
@@ -154,7 +154,6 @@
   100% {
     opacity: 100%; } }
 
-/*INDEX*/
 .carousel * {
   padding: 0%; }
 
@@ -180,6 +179,46 @@
   .carousel .carousel-caption p {
     color: #b3b3b3; }
 
+.carruseldemovil {
+  height: 60vh;
+  overflow: hidden;
+  display: none; }
+  .carruseldemovil .carruselItem {
+    padding: 0%;
+    height: 100%;
+    position: relative;
+    background-color: black;
+    background-blend-mode: soft-light; }
+    .carruseldemovil .carruselItem .tarjetitas {
+      height: 100%;
+      color: #fff; }
+      .carruseldemovil .carruselItem .tarjetitas img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 50%; }
+      .carruseldemovil .carruselItem .tarjetitas h3 {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+    .carruseldemovil .carruselItem .flechas {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+      z-index: 4; }
+      .carruseldemovil .carruselItem .flechas i {
+        color: #fff; }
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -188,27 +227,28 @@
   color: black;
   margin-top: 15px;
   height: 850px; }
-  .menu p {
-    font-size: 18px;
-    text-align: justify;
-    line-height: 25px; }
-    .menu p span {
-      color: #3374db;
-      font-weight: bold; }
   .menu section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 500px; }
-  .menu .img {
+    .menu section h2 {
+      text-align: center;
+      padding-bottom: 15px;
+      font-weight: bold; }
+    .menu section p {
+      font-size: 18px;
+      text-align: justify;
+      line-height: 25px; }
+      .menu section p span {
+        color: #3374db;
+        font-weight: bold; }
+  .menu img {
+    padding: 0%;
     border-radius: 5%;
     width: 40%;
     height: 60%;
     box-shadow: -10px 10px 20px 0px black; }
-  .menu h2 {
-    text-align: center;
-    padding-bottom: 15px;
-    font-weight: bold; }
 
 .navimg {
   margin-top: 80px;
@@ -282,7 +322,7 @@
     justify-content: center;
     width: 500px;
     height: 500px;
-    background-image: url(../multimedia/fases-de-una-consultoría-integral.jpg);
+    background-image: url(../multimedia/consultoria.jpg);
     background-size: 180%;
     background-position: center;
     align-items: flex-end;
@@ -315,7 +355,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: 700px; }
-  .razones div h2, .razones .menu11 .ford div h2, .menu11 .ford .razones div h2 {
+  .razones div h2, .razones .menuNovedades .ford div h2, .menuNovedades .ford .razones div h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -333,13 +373,14 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      height: 580px;
+      height: 520px;
       max-width: 100%; }
       .razones .razones1 .razones__card div img {
         background-blend-mode: soft-light;
         max-width: 100%;
         height: 280px;
-        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
         object-fit: cover;
         opacity: 50%; }
         .razones .razones1 .razones__card div img:hover {
@@ -347,57 +388,50 @@
           background-blend-mode: luminosity; }
       .razones .razones1 .razones__card .razones__cuerpo {
         color: aliceblue;
-        height: 100px; }
+        margin-top: 5px; }
         .razones .razones1 .razones__card .razones__cuerpo h4 {
-          display: flex;
-          flex-direction: row;
-          justify-content: center; }
+          text-align: start; }
         .razones .razones1 .razones__card .razones__cuerpo p {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          text-align: center; }
+          text-align: justify; }
 
-/*SECCION OKM*/
 .menu1 {
   padding-top: 70px; }
   .menu1 article h2 {
     font-weight: bold; }
   .menu1 article a {
-    text-decoration: none;
-    color: darkblue; }
-
-.menu1__marca__itemA {
-  margin-top: 50px;
-  background-color: darkblue;
-  display: flex;
-  color: aliceblue;
-  font-size: 30px;
-  margin-right: 70%;
-  margin-left: 15px;
-  transform: skew(-35deg); }
-
-.menu1__marca__itemB {
-  margin-top: 10px;
-  background-color: darkblue;
-  display: flex;
-  justify-content: start;
-  color: aliceblue;
-  font-size: 30px;
-  margin-left: 27.5%;
-  margin-right: 25px;
-  transform: skew(-35deg); }
-
-.menu1__marca__itemC {
-  margin-top: 10px;
-  background-color: darkblue;
-  display: flex;
-  justify-content: start;
-  color: aliceblue;
-  font-size: 30px;
-  margin-left: 26%;
-  margin-right: 45px;
-  transform: skew(-35deg); }
+    color: #3374db; }
+  .menu1 article span {
+    color: #3374db;
+    font-weight: bold; }
+  .menu1 .menu1__marca__itemA {
+    margin-top: 50px;
+    background-color: darkblue;
+    display: flex;
+    color: aliceblue;
+    font-size: 30px;
+    margin-right: 70%;
+    margin-left: 15px;
+    transform: skew(-35deg); }
+  .menu1 .menu1__marca__itemB {
+    margin-top: 10px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: start;
+    color: aliceblue;
+    font-size: 30px;
+    margin-left: 27.5%;
+    margin-right: 25px;
+    transform: skew(-35deg); }
+  .menu1 .menu1__marca__itemC {
+    margin-top: 10px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: start;
+    color: aliceblue;
+    font-size: 30px;
+    margin-left: 26%;
+    margin-right: 45px;
+    transform: skew(-35deg); }
 
 .contenedor {
   padding: 0%;
@@ -439,57 +473,56 @@
       background-size: cover;
       background-position: center; }
 
-.menu11 {
+.menuNovedades {
   background-color: #2c2c2c;
   margin-top: 700px; }
-  .menu11 * {
+  .menuNovedades * {
     margin: 0%; }
-  .menu11 h1 {
+  .menuNovedades h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     font-weight: bold;
     margin-bottom: 15px;
     color: aliceblue; }
-  .menu11 .peugeot, .menu11 .ford, .menu11 .citroen {
+  .menuNovedades .peugeot, .menuNovedades .ford, .menuNovedades .citroen {
     background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
-    .menu11 .peugeot div, .menu11 .citroen div, .menu11 .ford div {
+    .menuNovedades .peugeot div, .menuNovedades .citroen div, .menuNovedades .ford div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      .menu11 .peugeot div h3, .menu11 .citroen div h3, .menu11 .ford div h3,
-      .menu11 .peugeot div p,
-      .menu11 .citroen div p,
-      .menu11 .ford div p {
+      .menuNovedades .peugeot div h3, .menuNovedades .citroen div h3, .menuNovedades .ford div h3,
+      .menuNovedades .peugeot div p,
+      .menuNovedades .citroen div p,
+      .menuNovedades .ford div p {
         display: flex;
         flex-direction: row;
         justify-content: start;
         color: aliceblue; }
-  .menu11 .ford {
+  .menuNovedades .ford {
     flex-direction: row-reverse; }
-    .menu11 .ford div h3,
-    .menu11 .ford div p {
+    .menuNovedades .ford div h3,
+    .menuNovedades .ford div p {
       display: flex;
       flex-direction: row;
       justify-content: flex-end; }
 
 .tabla {
   margin-top: 50px; }
-  .tabla div, .tabla .menu11 .ford div, .menu11 .ford .tabla div {
+  .tabla div, .tabla .menuNovedades .ford div, .menuNovedades .ford .tabla div {
     display: flex;
     flex-direction: column;
     justify-content: center; }
-    .tabla div h2, .tabla .menu11 .ford div h2, .menu11 .ford .tabla div h2 {
+    .tabla div h2, .tabla .menuNovedades .ford div h2, .menuNovedades .ford .tabla div h2 {
       text-decoration: underline; }
-    .tabla div table thead, .tabla .menu11 .ford div table thead, .menu11 .ford .tabla div table thead {
+    .tabla div table thead, .tabla .menuNovedades .ford div table thead, .menuNovedades .ford .tabla div table thead {
       border-bottom: 2px solid black; }
-    .tabla div table tbody tr, .tabla .menu11 .ford div table tbody tr, .menu11 .ford .tabla div table tbody tr {
+    .tabla div table tbody tr, .tabla .menuNovedades .ford div table tbody tr, .menuNovedades .ford .tabla div table tbody tr {
       border-bottom: 1px solid darkgray; }
 
-/*SECCION USADOS*/
 .menu2 {
   margin-top: 50px;
   display: flex;
@@ -507,7 +540,7 @@
     margin-bottom: 30px;
     font-size: large; }
     .menu2 p span {
-      color: darkblue;
+      color: #3374db;
       font-weight: bold; }
 
 .tarjeta {
@@ -526,11 +559,11 @@
     .tarjeta .cards img {
       max-width: 100%;
       height: 300px; }
-    .tarjeta .cards h5, .tarjeta .cards p {
+    .tarjeta .cards h5,
+    .tarjeta .cards p {
       font-weight: bold;
       color: #fff; }
 
-/*SERVICIOS*/
 .menu3 img {
   width: 910px;
   height: 710px;
@@ -541,7 +574,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: linear-gradient(-160deg, #fff 70%, #3374db 30%); }
+  background: linear-gradient(-160deg, #f2f0f0 70%, #3374db 30%); }
   .menu3 .menu3__taller1 p {
     display: flex;
     flex-direction: row;
@@ -549,15 +582,14 @@
     align-items: center;
     color: black;
     font-size: 50px;
-    font-family: "Roboto", sans-serif;
     font-weight: bolder; }
   .menu3 .menu3__taller1 div img {
     max-width: 100%;
     max-height: 100%;
-    padding: 30px; }
+    padding: 40px; }
 
 .menu3 .menu3__taller2 {
-  background: linear-gradient(160deg, #b3b3b3 70%, #3374db 30%);
+  background: linear-gradient(160deg, #f2f0f0 70%, #3374db 30%);
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between; }
@@ -566,12 +598,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family: "Roboto", sans-serif;
-    color: aliceblue;
+    color: black;
     text-align: justify;
     font-weight: bolder;
-    font-size: large;
-    font-family: "Lexend Exa", sans-serif; }
+    font-size: large; }
   .menu3 .menu3__taller2 div img {
     max-width: 100%;
     max-height: 100%;
@@ -580,7 +610,6 @@
 .pie--usados {
   margin-top: 0%; }
 
-/*CONTACTOS*/
 .contacto {
   background-image: url(../multimedia/atencion.jpg);
   background-size: cover;
@@ -622,8 +651,8 @@
         color: aliceblue;
         text-decoration: none;
         border-radius: 10px;
-        width: 100px;
-        height: 30px;
+        width: 136px;
+        height: 36px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -638,7 +667,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly; }
-  .formCont div, .formCont .menu11 .ford div, .menu11 .ford .formCont div {
+  .formCont div, .formCont .menuNovedades .ford div, .menuNovedades .ford .formCont div {
     display: flex;
     flex-direction: row;
     align-items: center; }
@@ -676,7 +705,7 @@
         .formCont .formulario .bton .bton1:focus, .formCont .formulario .bton .bton2:focus {
           background-color: #789ec1; }
 
-/*MEDIA QUERI INDEX*/
+/*MEDIA QUERI*/
 @media (max-width: 768px) {
   .header {
     border-bottom: none; }
@@ -724,6 +753,8 @@
         left: 0%; }
   .carousel {
     display: none; }
+  .carruseldemovil {
+    display: block; }
   .menu {
     margin-top: 60px;
     height: auto;
@@ -732,32 +763,9 @@
     .menu article {
       width: auto;
       margin-top: 30px; }
-    .menu .img {
-      width: 80%; }
-  .navimg .navimg__item1 {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 10px; }
-    .navimg .navimg__item1:hover {
-      height: 300px; }
-  .navimg .navimg__item2 {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 10px; }
-    .navimg .navimg__item2:hover {
-      height: 300px; }
-    .navimg .navimg__item2 a {
-      width: 350px;
-      height: 70px; }
-  .navimg .navimg__item3 {
-    width: 300px;
-    height: 300px; }
-    .navimg .navimg__item3:hover {
-      height: 300px; }
-    .navimg .navimg__item3 a {
-      font-size: 16px;
-      width: 350px;
-      height: 70px; }
+    .menu img {
+      width: 80%;
+      height: 50%; }
   .razones {
     background: linear-gradient(45deg, #3374db 50%, #fff 50%);
     margin-top: 120px;
@@ -765,7 +773,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 1800px; }
-    .razones div h2, .razones .menu11 .ford div h2, .menu11 .ford .razones div h2 {
+    .razones div h2, .razones .menuNovedades .ford div h2, .menuNovedades .ford .razones div h2 {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -793,7 +801,6 @@
         display: flex;
         justify-content: space-evenly; } }
 
-/*MEDIA 768 A 992*/
 @media (min-width: 768px) and (max-width: 992px) {
   .header .navbar .navbar__checkbtn {
     display: block; }
@@ -827,15 +834,14 @@
     left: 0%; }
   .menu {
     display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    flex-direction: column; }
+    .menu img {
+      width: 60%;
+      height: 40%;
+      border-radius: 5%; }
     .menu article {
       margin-top: 30px;
       width: auto; }
-    .menu .img {
-      width: 40%;
-      height: 40%;
-      border-radius: 5%; }
   .navimg__item1 {
     margin-bottom: 10px;
     width: 400px;
@@ -863,7 +869,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 1800px; }
-    .razones div h2, .razones .menu11 .ford div h2, .menu11 .ford .razones div h2 {
+    .razones div h2, .razones .menuNovedades .ford div h2, .menuNovedades .ford .razones div h2 {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -877,7 +883,6 @@
         height: 500px;
         margin-top: 20px; } }
 
-/*MEDIA QUERIES 0KM*/
 @media (max-width: 768px) {
   .menu1 .menu1__marca__itemA {
     font-size: 20px;
@@ -897,7 +902,8 @@
     transform: skew(0deg); }
   .contenedor {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    cursor: pointer; }
   .menu11 .ford div h3,
   .menu11 .ford div p {
     display: flex;
@@ -909,7 +915,7 @@
     margin-top: 40px; } }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .menu11 .peugeot, .menu11 .ford, .menu11 .citroen {
+  .menu11 .peugeot, .menu11 .menuNovedades .ford, .menuNovedades .menu11 .ford, .menu11 .menuNovedades .citroen, .menuNovedades .menu11 .citroen {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -930,7 +936,6 @@
     justify-content: space-around;
     align-items: center; } }
 
-/*USADOS*/
 @media (max-width: 768px) {
   .tarjeta {
     display: flex;
@@ -942,7 +947,6 @@
       .tarjeta .cards img {
         object-fit: scale-down; } }
 
-/*Media 768 a 992px*/
 @media (min-width: 768px) and (max-width: 992px) {
   .menu2 {
     display: flex;
@@ -958,13 +962,9 @@
     width: 350px;
     height: 450px; } }
 
-/*SERVICIOS*/
 @media (max-width: 768px) {
-  * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box; }
   .menu3 .menu3__taller1 {
+    background: none;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center; }
@@ -977,6 +977,7 @@
     .menu3 .menu3__taller1 p {
       font-size: 30px; }
   .menu3 .menu3__taller2 {
+    background: none;
     display: flex;
     flex-direction: column;
     justify-content: center; }
@@ -995,12 +996,12 @@
   .pie--usados {
     margin-top: 0%; } }
 
-/*Media 768 a 992 px*/
 @media (min-width: 768px) and (max-width: 992px) {
   .menu3 img {
     width: 710px;
     height: 610px; }
   .menu3 .menu3__taller1 {
+    background: none;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-evenly;
@@ -1012,6 +1013,7 @@
     .menu3 .menu3__taller1 p {
       align-self: center; }
   .menu3 .menu3__taller2 {
+    background: none;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -1029,7 +1031,6 @@
   .pie--usados {
     margin-top: 0%; } }
 
-/*CONTACTO*/
 @media (max-width: 768px) {
   * {
     box-sizing: border-box;
@@ -1043,7 +1044,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 1200px;
+    height: 1100px;
     margin-top: 50px; }
     .formCont .bton {
       justify-content: center; }
@@ -1061,7 +1062,6 @@
         .formCont .mb-3 .area:focus {
           height: 100px; } }
 
-/*Media 768 a 992*/
 @media (min-width: 768px) and (max-width: 992px) {
   * {
     margin: 0%;
